@@ -1,7 +1,3 @@
-//
-// Created by a on 6/30/20.
-//
-
 #include "TestFileWriter.h"
 #include "../Writer/FileWriter.h"
 #include<iostream>
@@ -10,10 +6,10 @@
 
 void TestFileWriter::testAll()
 {
-    std::cout<<"\n------------Start test FileReader-----------\n"<<std::endl;
+    std::cout<<"\n------------Start test FileWriter-----------\n"<<std::endl;
     testCtor();
     testWrite();
-    std::cout<<"\n------------End test FileReader-----------\n"<<std::endl;
+    std::cout<<"\n------------End test FileWriter-----------\n"<<std::endl;
 
 }
 
@@ -22,7 +18,7 @@ void TestFileWriter::testCtor()
     std::string problem;
     try
     {
-        const char* fileName = "test.text";
+        const char* fileName = "Src/Test/test.text";
         FileWriter file(fileName);
         if(0 != strcmp(file.m_fileName,fileName))
             problem += "check 1";
@@ -44,7 +40,7 @@ void TestFileWriter::testWrite()
     std::string problem;
     try
     {
-        const char *fileName = "test.text";
+        const char *fileName = "Src/Test/test.text";
         std::string str,text = "TATTTTGGCCAATTTTT";
         FileWriter file(fileName);
         file.write("ABCDEFGHIJKLMNOP");

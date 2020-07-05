@@ -30,12 +30,12 @@ void TestDnaSeq::test()
 void TestDnaSeq::testIsValid()
 {
     std::string problems;
-    if(!(isConsistOf("AAAGGGTGTCCATTGTA",DnaSequence::s_baseDna)))
+    if(!(isConsistOf("AAAGGGTGTCCATTGTA",Nucleotide::s_baseDna)))
         problems += "1, ";
-    if(isConsistOf("AAAGGGcTTCCATTGTA",DnaSequence::s_baseDna))
+    if(isConsistOf("AAAGGGcTTCCATTGTA",Nucleotide::s_baseDna))
         problems += "2, ";
 
-    if(isConsistOf('\0',DnaSequence::s_baseDna))
+    if(isConsistOf('\0',Nucleotide::s_baseDna))
         problems += "3";
     if(!problems.empty())
         std::cout<<"\tError: isValidSeq()\n: \t\tin checks: "<<problems<<std::endl;

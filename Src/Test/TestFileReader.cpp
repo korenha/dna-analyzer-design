@@ -22,7 +22,7 @@ void TestFileReader::testCtor()
     std::string problem;
     try
     {
-        const char* fileName = "DNA.text";
+        const char* fileName = "Src/Test/DNA.text";
         FileReader file(fileName);
         if(0 != strcmp(file.m_fileName,fileName))
             problem += "check 1";
@@ -55,7 +55,7 @@ void TestFileReader::testRead()
     std::string problem;
     try
     {
-        const char *fileName = "DNA.text";
+        const char *fileName = "Src/Test/DNA.text";
         std::string str,text = "TATTTTGGCCAATTTTT";
         FileReader file(fileName);
         str = file.read();
