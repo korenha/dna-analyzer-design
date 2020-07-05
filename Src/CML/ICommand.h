@@ -1,11 +1,14 @@
 #ifndef DNAANALYZERPROJECT_ICOMMAND_H
 #define DNAANALYZERPROJECT_ICOMMAND_H
-#include "DNAData.h"
+struct IParams;
+#include "../DNA/DNAData.h"
+namespace CML {
 
-class ICommand
-{
-    virtual void run()=0;
-};
 
+    class ICommand
+    {
+        virtual void run(IParams *params) = 0;
+    };
+}
 
 #endif //DNAANALYZERPROJECT_ICOMMAND_H

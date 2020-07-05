@@ -1,10 +1,15 @@
 #ifndef DNAANALYZERPROJECT_ICREATIONCOMMAND_H
 #define DNAANALYZERPROJECT_ICREATIONCOMMAND_H
+#include "ICommand.h"
 
-#include "../CML/ICommand.h"
-
-class ICreationCommand: public ICommand
+namespace CML
 {
-    virtual void run()=0;
-};
+
+
+    class ICreationCommand : public CML::ICommand
+    {
+        virtual void run(IParams *params) = 0;
+
+    };
+}
 #endif //DNAANALYZERPROJECT_ICREATIONCOMMAND_H
