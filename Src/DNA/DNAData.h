@@ -1,13 +1,10 @@
-//
-// Created by a on 7/5/20.
-//
-
 #ifndef DNAANALYZERPROJECT_DNADATA_H
 #define DNAANALYZERPROJECT_DNADATA_H
-
-
-class DNAData {
-
+class DNAHashTable;
+class DNAData
+{
+public:
+    static DNAHashTable* getDNAData();
 };
 
 

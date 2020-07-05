@@ -1,5 +1,7 @@
-//
-// Created by a on 7/5/20.
-//
-
 #include "DNAData.h"
+#include "DNAHashTable.h"
+DNAHashTable *DNAData::getDNAData()
+{
+    static DNAHashTable data;
+    return &data;
+}
