@@ -1,0 +1,14 @@
+//
+// Created by a on 7/5/20.
+//
+
+#ifndef DNAANALYZERPROJECT_ICREATIONCOMMAND_H
+#define DNAANALYZERPROJECT_ICREATIONCOMMAND_H
+
+
+class IcreationCommand {
+
+};
+
+
+#endif //DNAANALYZERPROJECT_ICREATIONCOMMAND_H

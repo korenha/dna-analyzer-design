@@ -1,0 +1,14 @@
+//
+// Created by a on 7/5/20.
+//
+
+#ifndef DNAANALYZERPROJECT_READERCONSTCHAR_H
+#define DNAANALYZERPROJECT_READERCONSTCHAR_H
+
+
+class ReaderConstChar {
+
+};
+
+
+#endif //DNAANALYZERPROJECT_READERCONSTCHAR_H

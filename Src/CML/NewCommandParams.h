@@ -1,0 +1,14 @@
+//
+// Created by a on 7/5/20.
+//
+
+#ifndef DNAANALYZERPROJECT_NEWCOMMANDPARAMS_H
+#define DNAANALYZERPROJECT_NEWCOMMANDPARAMS_H
+
+
+class NewCommandParams {
+
+};
+
+
+#endif //DNAANALYZERPROJECT_NEWCOMMANDPARAMS_H

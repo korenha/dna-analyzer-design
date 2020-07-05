@@ -1,0 +1,14 @@
+//
+// Created by a on 7/5/20.
+//
+
+#ifndef DNAANALYZERPROJECT_DNAHASHTABLE_H
+#define DNAANALYZERPROJECT_DNAHASHTABLE_H
+
+
+class DNAHashTable {
+
+};
+
+
+#endif //DNAANALYZERPROJECT_DNAHASHTABLE_H

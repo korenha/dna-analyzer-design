@@ -1,0 +1,14 @@
+//
+// Created by a on 7/5/20.
+//
+
+#ifndef DNAANALYZERPROJECT_DEFAULTNAME_H
+#define DNAANALYZERPROJECT_DEFAULTNAME_H
+
+
+class DefaultName {
+
+};
+
+
+#endif //DNAANALYZERPROJECT_DEFAULTNAME_H
