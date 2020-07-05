@@ -4,7 +4,7 @@
 
 #include "Status.h"
 
-const char *Status::get() {
+const char *Status::get()const {
     return m_status;
 }
 
