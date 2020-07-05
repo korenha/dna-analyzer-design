@@ -1,0 +1,14 @@
+//
+// Created by a on 7/5/20.
+//
+
+#ifndef DNAANALYZERPROJECT_DNAMETADATA_H
+#define DNAANALYZERPROJECT_DNAMETADATA_H
+
+
+class DNAMetaData {
+
+};
+
+
+#endif //DNAANALYZERPROJECT_DNAMETADATA_H
