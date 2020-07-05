@@ -1,13 +1,13 @@
-//
-// Created by a on 7/5/20.
-//
-
 #ifndef DNAANALYZERPROJECT_READERCONSTCHAR_H
 #define DNAANALYZERPROJECT_READERCONSTCHAR_H
 
 
-class ReaderConstChar {
-
+class ReaderConstChar
+{
+public:
+    const char* read()const{ return data;}
+private:
+    const char* data;
 };
 
 
