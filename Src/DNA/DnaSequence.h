@@ -1,45 +1,31 @@
 //
 // Created by a on 6/1/20.
 //
-
 #ifndef DNASEQUENCE_DNASEQUENCE_H
 #define DNASEQUENCE_DNASEQUENCE_H
 
 #include <string>
 #include <vector>
+#include "Nucleotide.h"
 class IReader;
 class IWriter;
 
 class DNAfile;
+typedef Nucleotide BaseDNA;
 
 class DnaSequence
 {
 private:
-    class Nucleotide
-    {
-    public:
-        Nucleotide(){m_nucleotide = '\0';}
-        Nucleotide(char nuc);
-        const Nucleotide& operator=(const Nucleotide& otherNuc);
-        operator char(){ return m_nucleotide; }
-        Nucleotide getBasePair()const;
-        bool operator==(const Nucleotide& otherNuc)const;
-        bool operator!=(const Nucleotide& otherNuc)const;
-
-    private:
-        char m_nucleotide;
-    };
 
 
 public:
-    typedef Nucleotide baseDna;
     DnaSequence(const char* dnaSeq);
     DnaSequence(const std::string& dnaSeq);
     DnaSequence(const IReader& dnaSeq);
     DnaSequence(const DnaSequence& otherDna);
     ~DnaSequence();
     const DnaSequence& operator=(const DnaSequence& otherDnaSeq);
-    baseDna& operator[](size_t index)const;
+    BaseDNA& operator[](size_t index)const;
     size_t getLength()const;
     DnaSequence slice(size_t start,size_t end)const;
     DnaSequence getPairedDna()const;
@@ -52,10 +38,9 @@ public:
 
 
 private:
-    baseDna* m_dnaSeq;
+    BaseDNA* m_dnaSeq;
     size_t lengthDna;
     friend class TestDnaSeq;
-    static const char* s_baseDna;
     DnaSequence(size_t length);
     void addConsensus(std::vector<DnaSequence> &updateVector, size_t indexStart, const std::vector<size_t >& end)const;
     void initDna(const char* dna);

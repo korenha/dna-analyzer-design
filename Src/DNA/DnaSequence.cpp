@@ -9,11 +9,10 @@
 static bool dnaSeqCmp(const DnaSequence& dna1,const DnaSequence& dna2);
 
 
-const char* DnaSequence::s_baseDna = "ACGT";
 
 void DnaSequence::initDna(const char *dna)
 {
-    m_dnaSeq = new baseDna[strlen(dna)+1];
+    m_dnaSeq = new BaseDNA[strlen(dna) + 1];
     lengthDna = strlen(dna);
     for (size_t i = 0; i < lengthDna; ++i)
     {
@@ -23,7 +22,7 @@ void DnaSequence::initDna(const char *dna)
 
 void DnaSequence::initDna(const DnaSequence& dna)
 {
-    m_dnaSeq = new baseDna[dna.lengthDna + 1];
+    m_dnaSeq = new BaseDNA[dna.lengthDna + 1];
     lengthDna = dna.lengthDna;
     for (size_t i = 0; i < lengthDna; ++i)
     {
@@ -33,7 +32,7 @@ void DnaSequence::initDna(const DnaSequence& dna)
 
 DnaSequence::DnaSequence(const char* dnaSeq)
 {
-    if(!isConsistOf(dnaSeq, s_baseDna))
+    if(!isConsistOf(dnaSeq, BaseDNA::s_baseDna))
         throw std::invalid_argument("Not consist of baseDna");
     initDna(dnaSeq);
 }
@@ -41,14 +40,14 @@ DnaSequence::DnaSequence(const char* dnaSeq)
 DnaSequence::DnaSequence(const IReader& dnaSeq)
 {
     std::string dna = dnaSeq.read();
-    if(!isConsistOf(dna.c_str(), s_baseDna))
+    if(!isConsistOf(dna.c_str(), BaseDNA::s_baseDna))
         throw std::invalid_argument("Not consist of baseDna");
     initDna(dna.c_str());
 }
 
 DnaSequence::DnaSequence(const std::string &dnaSeq)
 {
-    if(!isConsistOf(dnaSeq.c_str(), s_baseDna))
+    if(!isConsistOf(dnaSeq.c_str(), BaseDNA::s_baseDna))
         throw std::invalid_argument("Not consist of baseDna");
     initDna(dnaSeq.c_str());
 }
@@ -65,11 +64,11 @@ DnaSequence::~DnaSequence()
 
 DnaSequence::DnaSequence(size_t length)
 {
-    m_dnaSeq = new baseDna[length];
+    m_dnaSeq = new BaseDNA[length];
     lengthDna = length;
 }
 
-DnaSequence::baseDna& DnaSequence::operator[](size_t index) const
+DnaSequence::BaseDNA& DnaSequence::operator[](size_t index) const
 {
     if(index > lengthDna)
         throw std::invalid_argument("Invalid_index");
@@ -81,7 +80,7 @@ const DnaSequence& DnaSequence::operator=(const DnaSequence& otherDnaSeq)
     if(*this == otherDnaSeq)
         return *this;
 
-    baseDna *toDelete = m_dnaSeq;
+    BaseDNA *toDelete = m_dnaSeq;
     try
     {
         initDna(otherDnaSeq);
@@ -175,52 +174,7 @@ std::ostream &operator<<(std::ostream &out,const DnaSequence &dna)
     return out;
 }
 
-DnaSequence::baseDna::Nucleotide(char nuc)
-{
-    if(!isConsistOf(nuc, s_baseDna))
-        throw std::invalid_argument("invalid_baseDna");
-    m_nucleotide = nuc;
-}
 
-
-DnaSequence::baseDna DnaSequence::baseDna::getBasePair() const
-{
-    switch (m_nucleotide)
-    {
-        case 'A':return 'T';
-        case 'C':return 'G';
-        case 'G':return 'C';
-        case 'T':return 'A';
-    }
-    return -1;
-}
-
-const DnaSequence::baseDna& DnaSequence::baseDna::operator=(const DnaSequence::baseDna &otherNuc)
-{
-    m_nucleotide = otherNuc.m_nucleotide;
-    return *this;
-}
-
-bool DnaSequence::baseDna::operator==(const DnaSequence::Nucleotide &otherNuc)const
-{
-    return m_nucleotide == otherNuc.m_nucleotide;
-}
-
-bool DnaSequence::baseDna::operator!=(const DnaSequence::Nucleotide &otherNuc) const {
-    return m_nucleotide != otherNuc.m_nucleotide;
-}
-
-static bool dnaSeqCmp(const DnaSequence &dna1, const DnaSequence &dna2)
-{
-    size_t i=0;
-
-    while(i < dna1.getLength()-1 && i < dna2.getLength() && dna1[i] == dna2[i])
-    {
-        i++;
-    }
-
-    return dna1[i] - dna2[i];
-}
 
 void DnaSequence::addConsensus(std::vector<DnaSequence> &updateVector, size_t indexStart, const std::vector<size_t >& end)const
 {
@@ -258,3 +212,14 @@ void DnaSequence::writerToFile(const IWriter &file)
     file.write((const char*)m_dnaSeq);
 }
 
+static bool dnaSeqCmp(const DnaSequence &dna1, const DnaSequence &dna2)
+{
+    size_t i=0;
+
+    while(i < dna1.getLength()-1 && i < dna2.getLength() && dna1[i] == dna2[i])
+    {
+        i++;
+    }
+
+    return dna1[i] - dna2[i];
+}
