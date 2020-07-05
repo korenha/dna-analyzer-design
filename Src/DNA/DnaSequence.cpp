@@ -68,7 +68,7 @@ DnaSequence::DnaSequence(size_t length)
     lengthDna = length;
 }
 
-DnaSequence::BaseDNA& DnaSequence::operator[](size_t index) const
+BaseDNA& DnaSequence::operator[](size_t index) const
 {
     if(index > lengthDna)
         throw std::invalid_argument("Invalid_index");
