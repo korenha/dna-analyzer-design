@@ -3,3 +3,7 @@
 //
 
 #include "StringReader.h"
+
+std::string StringReader::read() const {
+    return m_string;
+}

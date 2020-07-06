@@ -1,7 +1,7 @@
 #ifndef DNAANALYZERPROJECT_ICOMMAND_H
 #define DNAANALYZERPROJECT_ICOMMAND_H
 struct IParams;
-#include "../DNA/DNAData.h"
+#include "../DNA/IDNAData.h"
 namespace CML {
 
 

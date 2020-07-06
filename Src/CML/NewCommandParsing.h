@@ -1,19 +1,18 @@
-#ifndef DNAANALYZERPROJECT_NEWCOMMANDPARAMS_H
-#define DNAANALYZERPROJECT_NEWCOMMANDPARAMS_H
-
-
-namespace CML {
+#ifndef DNAANALYZERPROJECT_NEWCOMMANDPARSING_H
+#define DNAANALYZERPROJECT_NEWCOMMANDPARSING_H
 
 #include <string>
 #include "IParams.h"
-#include "../DNA/DNAMetaData.h"
-    struct NewCommandParams: public CML::IParams
+namespace CML {
+
+//#include "../DNA/DNAMetaData.h"
+    struct NewCommandParsing: public CML::IParams
     {
-        explicit NewCommandParams(const char* dna,const std::string& name="");
-        const char* m_dna;
+        NewCommandParsing(const char *params);
+        std::string m_dna;
         std::string m_name;
 
     };
 }
 
-#endif //DNAANALYZERPROJECT_NEWCOMMANDPARAMS_H
+#endif //DNAANALYZERPROJECT_NEWCOMMANDPARSING_H

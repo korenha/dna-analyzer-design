@@ -1,13 +1,17 @@
-//
-// Created by a on 7/6/20.
-//
-
 #ifndef DNAANALYZERPROJECT_STRINGREADER_H
 #define DNAANALYZERPROJECT_STRINGREADER_H
 
 
-class StringReader {
+#include "IReader.h"
 
+class StringReader: public IReader
+{
+public:
+    StringReader(const std::string& data):m_string(data){}
+    std::string read()const;
+
+private:
+    std::string m_string;
 };
 
 
