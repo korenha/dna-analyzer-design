@@ -1,18 +1,12 @@
-
-
-//
-// Created by a on 7/5/20.
-//
-namespace CML {
-
 #include "NewCommand.h"
-#include "../DNA/DNAData.h"
-#include "NewCommandParams.h"
-#include "../Reader/ReaderConstChar.h"
-    void CML::NewCommand::run(NewCommandParams *params)
+#include "../DNA/IDNAData.h"
+#include "../CML/NewCommandParsing.h"
+#include "../Reader/StringReader.h"
+
+namespace CML {
+    void NewCommand::run(NewCommandParsing* params)
     {
-        NewCommandParams* pareters=params;
-        (DNAData::getDNAData()).insert(ReaderConstChar(pareters->m_dna),pareters->m_name)
+        (IDNAData::getDNAData()).insert(DNAMetaData(StringReader(params->m_dna),params->m_name));
     }
 
 }

@@ -1,0 +1,14 @@
+//
+// Created by a on 7/6/20.
+//
+
+#ifndef DNAANALYZERPROJECT_STRINGREADER_H
+#define DNAANALYZERPROJECT_STRINGREADER_H
+
+
+class StringReader {
+
+};
+
+
+#endif //DNAANALYZERPROJECT_STRINGREADER_H

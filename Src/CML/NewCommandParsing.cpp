@@ -2,11 +2,11 @@
 // Created by a on 7/5/20.
 //
 
-#include "NewCommandParams.h"
+#include "NewCommandParsing.h"
 namespace CML{
 
 
-NewCommandParams::NewCommandParams(const char *dna, const std::string &name):m_dna(dna),m_name(name)
+NewCommandParsing::NewCommandParsing(const char *dna, const std::string &name): m_dna(dna), m_name(name)
 {
     static size_t numDefault = 1;
     if(name.empty())

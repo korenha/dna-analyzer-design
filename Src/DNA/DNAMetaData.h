@@ -17,6 +17,8 @@ public:
     std::vector<size_t >findAllSubSeq(const DnaSequence& subSeq)const{ return m_dnaSequence.findAllSubSeq(subSeq);}
     std::vector<DnaSequence> findConsensusSequences()const{ return m_dnaSequence.findConsensusSequences();}
     void writerToFile(const IWriter& file){ return m_dnaSequence.writerToFile(file);}
+    std::string getName()const{ return m_name;}
+    const char* getStatus()const{return m_status.get();}
 private:
     DnaSequence m_dnaSequence;
     Status m_status;

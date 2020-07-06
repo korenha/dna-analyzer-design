@@ -3,24 +3,29 @@
 #include <iostream>
 #include <map>
 #include "DNAMetaData.h"
+#include "IDNAData.h"
+
 using std::pair;
 using std::map;
 
-//using __gnu_cxx::hash_map;
-class DNAHashTable
+class DNAHashTable:public IDNAData
 {
 public:
-    DNAHashTable():id(1){}
-    void insert(const IReader &reader, const std::string &name);
+
+    static IDNAData& getDNAData();
+    //static const DNAHashTable  DNACollection;
+    void insert(const DNAMetaData &metaData);
     size_t find(const std::string& name)const;
-    const DNAMetaData& find(size_t _id)const;
+    //const DNAMetaData& find(size_t _id)const;
     //add functions
     //void deleteDNa();
 private:
+    friend class DNAData;
     size_t id;
     map<std::string ,size_t > mapByNameToId;
     map<size_t ,DNAMetaData > DNAData;
-
+    DNAHashTable():id(1){}
+    DNAHashTable(DNAHashTable&){}
 
 };
 
