@@ -5,11 +5,11 @@
 #include "CommandFactory.h"
 #include "NewCommand.h"
 namespace CML{
-    std::vector<std::string> commandsName(CML::CommandFactory::E_Last);
+    std::string commandsName[CommandFactory::E_Last] = {};
     ICommand *CommandFactory::getCommand(const std::string &commandName)
     {
         unsigned int indexCommand;
-        for (indexCommand = 0; indexCommand < commandName.size() &&  commandName != commandsName[indexCommand]; ++indexCommand);
+        for (indexCommand = 0; indexCommand < E_Last &&  commandName != commandsName[indexCommand]; ++indexCommand);
         ECommand command = static_cast<ECommand>(indexCommand);
         switch (command)
         {
@@ -20,6 +20,9 @@ namespace CML{
             /*....*/
             case E_Last:
                 break;
+            default:
+                return NULL;
         }
+        return NULL;
     }
 }
