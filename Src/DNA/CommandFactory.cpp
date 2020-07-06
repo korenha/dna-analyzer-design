@@ -1,17 +1,21 @@
-#include "CommandFactory.h"
-#include "CommandName.h"
-#include "NewCommand.h"
-namespace CML{
+//
+// Created by a on 7/6/20.
+//
 
-    ICommand *CommandFactory::getCommand(const std::string &command)
+#include "CommandFactory.h"
+#include "NewCommand.h"
+#include "CommandName.h"
+namespace CML{
+    ICommand *CommandFactory::getCommand(const std::string &commandName)
     {
-        switch (CommandName::getECommand(command))
+
+        switch (CommandName::getECommand(commandName))
         {
             case CommandName::E_NEW:
                 return new NewCommand();
             case CommandName::E_LOAD:
                 break;
-                /*....*/
+            /*....*/
             case CommandName::E_Last:
                 break;
             default:

@@ -5,22 +5,19 @@
 #include <vector>
 #include "CommandsParsingFactory.h"
 #include "NewCommandParsing.h"
+#include "CommandName.h"
 namespace CML{
-    std::string commandsName[CommandsParsingFactory::E_Last] = {};
 
-    IParams *CommandsParsingFactory::getParams(const std::string &params)
+    IParams *CommandsParsingFactory::getParams(const std::string &commandName, const std::string &params)
     {
-        unsigned int indexCommand;
-        for (indexCommand = 0; indexCommand < E_Last &&  params != commandsName[indexCommand]; ++indexCommand);
-        EPCommand command = static_cast<EPCommand>(indexCommand);
-        switch (command)
+        switch (CommandName::getECommand(commandName))
         {
-            case E_NEW:
+            case CommandName::E_NEW:
                 return new NewCommandParsing(params);
-            case E_LOAD:
+            case CommandName::E_LOAD:
                 break;
                 /*....*/
-            case E_Last:
+            case CommandName::E_Last:
                 break;
             default:
                 return NULL;

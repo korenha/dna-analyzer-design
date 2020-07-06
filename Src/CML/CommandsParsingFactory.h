@@ -9,14 +9,7 @@ namespace CML{
 class CommandsParsingFactory
 {
 public:
-    enum EPCommand{
-        E_NEW,
-        E_LOAD,
-        //....
-                E_Last
-    };
-public:
-    static IParams* getParams(const std::string &params);
+    static IParams *getParams(const std::string &commandName, const std::string &params);
 
 private:
     CommandsParsingFactory();
