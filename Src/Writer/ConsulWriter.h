@@ -1,10 +1,13 @@
-#ifndef DNAANALYZERPROJECT_CONSULEWRITER_H
-#define DNAANALYZERPROJECT_CONSULEWRITER_H
+#ifndef DNAANALYZERPROJECT_CONSULWRITER_H
+#define DNAANALYZERPROJECT_CONSULWRITER_H
 
 
-class ConsuleWriter {
+#include "IWriter.h"
 
+class ConsulWriter: public IWriter
+{
+    void write(const char* output)const;
 };
 
 
-#endif //DNAANALYZERPROJECT_CONSULEWRITER_H
+#endif //DNAANALYZERPROJECT_CONSULWRITER_H
