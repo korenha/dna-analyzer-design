@@ -8,7 +8,7 @@ namespace CML {
 //#include "../DNA/DNAMetaData.h"
     struct NewCommandParsing: public CML::IParams
     {
-        NewCommandParsing(const char *params);
+        NewCommandParsing(const std::string &params);
         std::string m_dna;
         std::string m_name;
 

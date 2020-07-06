@@ -2,7 +2,7 @@
 
 namespace CML{
 
-NewCommandParsing::NewCommandParsing(const char *params) : m_dna(params)
+NewCommandParsing::NewCommandParsing(const std::string &params) : m_dna(params)
 {
     static size_t numDefault = 1;
   //  const char* param = params;
