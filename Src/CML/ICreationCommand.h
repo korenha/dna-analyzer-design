@@ -6,10 +6,12 @@ namespace CML
 {
 
 
-    class ICreationCommand : public CML::ICommand
+    class ICreationCommand : public ICommand
     {
-        virtual void run(IParams *params) = 0;
+    public:
+        virtual void run(IParams *params){}
 
     };
+
 }
 #endif //DNAANALYZERPROJECT_ICREATIONCOMMAND_H

@@ -7,7 +7,9 @@ namespace CML {
 
     class ICommand
     {
+    public:
         virtual void run(IParams *params) = 0;
+        virtual ~ICommand(){}
     };
 }
 

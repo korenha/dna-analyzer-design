@@ -6,7 +6,8 @@ namespace CML {
 
     class NewCommand :public ICreationCommand
     {
-        void run(struct NewCommandParsing* params);
+    public:
+        virtual void run(struct IParams* params);
     };
 
 }
