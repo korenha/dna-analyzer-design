@@ -4,14 +4,13 @@
 #include <vector>
 #include "CommandsManager.h"
 using std::map;
-std::map<std::string,CML::ICommand*> commandMap;
 CML::ICommand *CommandsManager::getCommand(const std::string &command)
 {
-    map<std::string,CML::ICommand*>::iterator indexCommand = commandMap.find(command);
-    if(indexCommand != commandMap.end())
+    map<std::string,CML::ICommand*>::iterator indexCommand = commandParsingMap.find(command);
+    if(indexCommand != commandParsingMap.end())
     {
         return indexCommand->second;
     }
-    commandMap.insert(std::pair<std::string,CML::ICommand*>(command,CML::CommandFactory::getCommand(command)));
-    return commandMap.find(command)->second;
+    commandParsingMap.insert(std::pair<std::string,CML::ICommand*>(command, CML::CommandFactory::getCommand(command)));
+    return commandParsingMap.find(command)->second;
 }

@@ -10,6 +10,10 @@ class CommandsManager
 {
 public:
     CML::ICommand* getCommand(const std::string &command);
+    //add dtor
+private:
+    static std::map<std::string,CML::ICommand*> commandParsingMap;
+
 };
 
 
