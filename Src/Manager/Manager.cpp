@@ -3,3 +3,9 @@
 //
 
 #include "Manager.h"
+#include <iostream>
+void Manager::doAction()
+{
+    std::cout<<"|--------Start Run-------------|"<<std::endl;
+
+}
