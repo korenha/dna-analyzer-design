@@ -1,0 +1,14 @@
+//
+// Created by a on 7/6/20.
+//
+
+#ifndef DNAANALYZERPROJECT_COMMANDSMENAGE_H
+#define DNAANALYZERPROJECT_COMMANDSMENAGE_H
+
+
+class CommandsMenage {
+
+};
+
+
+#endif //DNAANALYZERPROJECT_COMMANDSMENAGE_H
