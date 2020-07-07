@@ -11,7 +11,7 @@
 namespace CML{
     std::string NewCommand::run(IParams *params) {
         std::vector<std::string> parameters = params->get();
-        DNAMetaData newDna(StringReader(*parameters.begin()),parameters[1]);
+        DNAMetaData newDna(StringReader(parameters.front()),parameters[1]);
         (IDNAData::getDNAData()).insert(newDna);
         std::stringstream out;
         out << '['<<(IDNAData::getDNAData()).getId(parameters[1])<<"] ";

@@ -9,12 +9,14 @@
 #include <string>
 #include "../CML/IParams.h"
 #include <map>
+#include <vector>
+
 class CommandParsingManager {
 public:
-    CML::IParams* getCommand(const std::string& commandName,const std::string &command);
-    //add dtor
+    CML::IParams* getParams(const std::string& commandName, const std::vector<std::string> &params);
+    ~CommandParsingManager();
 private:
-    static std::map<std::string,CML::IParams*> commandParsingMap;
+    std::map<std::string,CML::IParams*> commandParsingMap;
 };
 
 
