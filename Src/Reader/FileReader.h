@@ -12,7 +12,7 @@ class FileReader: public IReader
 {
 
 public:
-    FileReader(const char* fileName);
+    FileReader(const char *fileName);
     std::string read()const;
 
 private:

@@ -5,17 +5,18 @@
 #ifndef DNA_FILEWRITER_H
 #define DNA_FILEWRITER_H
 
+#include <string>
 
 #include "IWriter.h"
 
 class FileWriter: public IWriter
 {
 public:
-    FileWriter(const char* fileName);
+    FileWriter(const std::string &fileName, const std::string &postFile);
     void write(const char* data)const;
 
 private:
-    const char *m_fileName;
+    std::string m_fileName;
     friend class TestFileWriter;
 };
 

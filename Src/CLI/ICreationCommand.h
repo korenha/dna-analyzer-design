@@ -10,6 +10,7 @@
 namespace CLI{
     class ICreationCommand:public ICommand
     {
+    public:
         std::string run(Params* params)=0;
     };
 }

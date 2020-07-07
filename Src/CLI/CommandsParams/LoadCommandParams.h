@@ -11,7 +11,7 @@ namespace CLI {
     struct LoadCommandParams: public Params
     {
         void set(const std::vector<std::string>& newParams);
-        LoadCommandParams(const std::vector<std::string>& parmas);
+        LoadCommandParams(const std::vector<std::string>& params);
 
     private:
         static size_t numDefault;

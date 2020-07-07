@@ -5,12 +5,13 @@
 #ifndef DNAANALYZERPROJECT_NEWCOMMAND_H
 #define DNAANALYZERPROJECT_NEWCOMMAND_H
 
-#include "../../ICreationCommand.h"
+#include "../ICreationCommand.h"
 
 namespace CLI{
 
 class NewCommand:public ICreationCommand
 {
+public:
     std::string run(Params* params);
 
 };
