@@ -5,6 +5,7 @@
 
 namespace CLI{
 
+    size_t NewCommandParsing::numDefault = 1;
     NewCommandParsing::NewCommandParsing(const std::vector<std::string>& parmas)
     {
         m_params.resize(2);
@@ -13,7 +14,6 @@ namespace CLI{
 
     void NewCommandParsing::set(const std::vector<std::string> &newParams)
     {
-        static size_t numDefault = 1;
         if(newParams.size() > 2)
         {
             throw std::invalid_argument("too much arguments");

@@ -15,22 +15,25 @@ void Manager::doAction()
 {
     std::cout<<"|--------Start Run-------------|"<<std::endl;
     std::string input,output;
-    input = m_reader->read();
     CommandsManager commandsManager;
     CommandParsingManager commandParsingManager;
-    try
+    while (1)
     {
-        std::vector<std::string> params = parsingCommand(input);
-        checkValidCommandStart(params);
-        output = commandsManager.getCommand(params[3])->run((CLI::IParams*)commandParsingManager.getParams(params[3], std::vector<std::string>(params.begin() + 4, params.end())));
-        m_writer->write(output.c_str());
-        input.clear();
+        try
+        {
+            m_writer->write("Your Command: ");
+            input = m_reader->read();
+            std::vector<std::string> params = parsingCommand(input);
+            checkValidCommandStart(params);
+            output = commandsManager.getCommand(params[3])->run((CLI::IParams*)commandParsingManager.getParams(params[3], std::vector<std::string>(params.begin() + 4, params.end())));
+            m_writer->write(output.c_str());
+            input.clear();
+        }
+        catch (const std::exception& e)
+        {
+            m_writer->write(e.what());
     }
-    catch (const MyException& e)
-    {
-        m_writer->write(e.what());
-    }
-
+}
 }
 
 static void checkValidCommandStart(const std::vector<std::string> &params)

@@ -10,6 +10,7 @@ CLI::IParams *CommandParsingManager::getParams(const std::string &commandName, c
     map<std::string,CLI::IParams*>::iterator indexCommand = commandParsingMap.find(commandName);
     if(indexCommand != commandParsingMap.end())
     {
+        indexCommand->second->set(params);
         return indexCommand->second;
     }
     commandParsingMap.insert(std::pair<std::string,CLI::IParams*>(commandName, CLI::CommandsParsingFactory::getParams(commandName, params)));

@@ -13,6 +13,10 @@ namespace CLI {
         void set(const std::vector<std::string>& newParams);
         NewCommandParsing(const std::vector<std::string>& parmas);
 
+    private:
+        static size_t numDefault;
+
+
     };
 }
 
