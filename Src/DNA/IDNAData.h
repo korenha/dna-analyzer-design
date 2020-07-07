@@ -11,8 +11,9 @@ public:
     static IDNAData& getDNAData();
     virtual ~IDNAData(){}
     virtual void insert(const DNAMetaData &metaData)=0;
-    virtual size_t find(const std::string& name)const=0;
-    // virtual const DNAMetaData& find(size_t _id)const=0;
+    virtual const DNAMetaData & find(const std::string& name)const=0;
+    virtual const DNAMetaData& find(size_t _id)const=0;
+    virtual size_t getId(const std::string& name)const=0;
 };
 
 
