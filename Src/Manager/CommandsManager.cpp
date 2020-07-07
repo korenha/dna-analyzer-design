@@ -11,7 +11,7 @@ CLI::ICommand *CommandsManager::getCommand(const std::string &command)
     {
         return indexCommand->second;
     }
-    commandsMap.insert(std::pair<std::string,CLI::ICommand*>(command, CLI::CommandFactory::getCommand(command)));
+    commandsMap.insert(std::pair<std::string,CLI::ICommand*>(command, CLI::CommandsFactory::getCommand(command)));
     return commandsMap.find(command)->second;
 }
 

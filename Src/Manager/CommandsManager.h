@@ -5,7 +5,7 @@
 #include <map>
 #include <string>
 #include "../CLI/ICommand.h"
-#include "../CLI/CommandFactory.h"
+#include "../CLI/CommandsFactory.h"
 class CommandsManager
 {
 public:

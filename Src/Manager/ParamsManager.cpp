@@ -1,9 +1,5 @@
-//
-// Created by a on 7/6/20.
-//
-
 #include "ParamsManager.h"
-#include "../CLI/CommandsParsingFactory.h"
+#include "../CLI/CommandsParamsFactory.h"
 using std::map;
 
 CLI::Params *ParamsManager::getParams(const std::string &commandName, const std::vector<std::string> &params){
@@ -13,7 +9,7 @@ CLI::Params *ParamsManager::getParams(const std::string &commandName, const std:
         indexCommand->second->set(params);
         return indexCommand->second;
     }
-    commandMap.insert(std::pair<std::string,CLI::Params*>(commandName, CLI::CommandsParsingFactory::getParams(commandName, params)));
+    commandMap.insert(std::pair<std::string,CLI::Params*>(commandName, CLI::CommandsParamsFactory::getParams(commandName, params)));
     return commandMap.find(commandName)->second;
 }
 
