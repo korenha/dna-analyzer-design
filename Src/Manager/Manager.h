@@ -4,7 +4,8 @@
 
 class Manager
 {
-    void doAction();
+public:
+    static void doAction();
 };
 
 
