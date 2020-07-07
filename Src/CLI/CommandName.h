@@ -13,6 +13,7 @@ public:
     enum ECommand{
         E_NEW,
         E_LOAD,
+        E_DUP,
         //....
                 E_Last
     };

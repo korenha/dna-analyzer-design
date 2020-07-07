@@ -7,6 +7,7 @@
 #include "CommandsParams/NewCommandParams.h"
 #include "CommandName.h"
 #include "CommandsParams/LoadCommandParams.h"
+#include "CommandsParams/DupCommandParams.h"
 
 namespace CLI{
 
@@ -19,6 +20,8 @@ namespace CLI{
             }
             case CommandName::E_LOAD:
                 return (Params *)(new LoadCommandParams(params));
+            case CommandName::E_DUP:
+                return (Params *)(new DupCommandParams(params));
                 /*....*/
             case CommandName::E_Last:
                 break;
