@@ -6,6 +6,7 @@
 #include "LoadCommand.h"
 #include "../../Reader/FileReader.h"
 #include "../../DNA/IDNAData.h"
+#include "../../Writer/FileWriter.h"
 
 namespace CLI
 {
@@ -14,9 +15,17 @@ namespace CLI
     {
         IDNAData::getDNAData().insert(DNAMetaData(FileReader(params->get()[0].c_str()),params->get()[1]));
         std::stringstream out;
-        out << '['<<(IDNAData::getDNAData()).getId(params->get()[1])<<"] ";
-        out << (IDNAData::getDNAData()).find(params->get()[1]).getName()<<": ";
-        out << (IDNAData::getDNAData()).find(params->get()[1])<< std::endl;
+        DNAMetaData temp = (IDNAData::getDNAData()).find(params->get()[1]);
+        out << '['<<IDNAData::getDNAData().getId(params->get()[1])<<"] ";
+        out << temp.getName()<<": ";
+        if(temp.getLength() > 40)
+        {
+            out << temp.slice(0,32)<<"..."<<temp.slice(temp.getLength() - 3,temp.getLength())<< std::endl;
+        }
+        else
+        {
+            out<<temp<<std::endl;
+        }
         return out.str();
 
     }

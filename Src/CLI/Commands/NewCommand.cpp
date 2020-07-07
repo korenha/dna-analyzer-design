@@ -1,7 +1,7 @@
 #include <iostream>
-#include "../NewCommand.h"
-#include "../../../DNA/IDNAData.h"
-#include "../../../Reader/StringReader.h"
+#include "NewCommand.h"
+#include "../../DNA/IDNAData.h"
+#include "../../Reader/StringReader.h"
 #include "sstream"
 namespace CLI{
     std::string NewCommand::run(Params *params) {

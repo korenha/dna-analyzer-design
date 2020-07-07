@@ -2,7 +2,7 @@
 #include <iostream>
 #include "FileReader.h"
 #include "../Exception/MyException.h"
-FileReader::FileReader(const char *fileName):m_fileName(fileName)
+FileReader::FileReader(const char *fileName) : m_fileName(fileName)
 {
     std::ifstream file(fileName,std::ios::in);
     if(!file.is_open())

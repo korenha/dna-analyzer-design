@@ -4,10 +4,11 @@
 #include "../../Exception/MyException.h"
 
 namespace CLI{
-    LoadCommandParams::LoadCommandParams(const std::vector<std::string> &parmas)
+    size_t LoadCommandParams::numDefault = 1;
+    LoadCommandParams::LoadCommandParams(const std::vector<std::string> &params)
     {
-        m_params.resize(3);
-        set(parmas);
+        m_params.resize(2);
+        set(params);
     }
 
     void LoadCommandParams::set(const std::vector<std::string> &newParams)
@@ -21,31 +22,24 @@ namespace CLI{
             throw std::invalid_argument("missing argument");
         }
         size_t positionIndex = newParams[0].find_last_of('.');
-        m_params[0] = std::string(newParams[0].begin(),newParams[0].begin() + positionIndex);
-        m_params[1] = std::string(newParams[0].begin() ,newParams[0].begin() + 32);
+        m_params[0] = newParams[0];
         if(newParams.size() == 2)
         {
             if(newParams[1][0] != '@')
             {
                 throw MyException("SyntaxError: Expected strt with @ in the second parameter");
             }
-            m_params[2] = newParams[1];
-            m_params[2].erase(m_params[1].begin());
+            m_params[1] = newParams[1];
+            m_params[1].erase(m_params[1].begin());
         }
         else
         {
-            m_params[2] = m_params[0];
-            if(positionIndex > 40)
-            {
-                m_params[2].erase(32,m_params[1].size() - 35);
-            }
-
+            m_params[1] = std::string(newParams[0].begin() ,newParams[0].begin() + positionIndex);
             std::stringstream name;
-            name<<m_params[2]<<numDefault;
-            m_params[2] = name.str();
+            name<<m_params[1]<<numDefault;
+            m_params[1] = name.str();
             ++numDefault;
         }
-        m_params.push_back(std::string(newParams[0].begin() + positionIndex,newParams[0].end()));
-    //add path
+    //support path
     }
 }

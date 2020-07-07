@@ -4,8 +4,10 @@
 
 #include <vector>
 #include "CommandsParamsFactory.h"
-#include "NewCommandParams.h"
+#include "CommandsParams/NewCommandParams.h"
 #include "CommandName.h"
+#include "CommandsParams/LoadCommandParams.h"
+
 namespace CLI{
 
     Params *CommandsParamsFactory::getParams(const std::string &commandName, const std::vector<std::string> &params)
@@ -16,7 +18,7 @@ namespace CLI{
                 return (Params *)(new NewCommandParams(params));
             }
             case CommandName::E_LOAD:
-                break;
+                return (Params *)(new LoadCommandParams(params));
                 /*....*/
             case CommandName::E_Last:
                 break;

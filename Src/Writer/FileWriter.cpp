@@ -7,7 +7,8 @@
 #include "../Exception/MyException.h"
 void FileWriter::write(const char *data)const
 {
-    std::ofstream file(m_fileName);
+    const char* name = m_fileName.c_str();
+    std::ofstream file(name);
 
     std::string line;
     if(!file.is_open())
@@ -17,4 +18,4 @@ void FileWriter::write(const char *data)const
     file.close();
 }
 
-FileWriter::FileWriter(const char *fileName):m_fileName(fileName){}
+FileWriter::FileWriter(const std::string &fileName, const std::string &postFile) : m_fileName((fileName + postFile)){}

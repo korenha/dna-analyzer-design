@@ -18,9 +18,9 @@ void TestFileWriter::testCtor()
     std::string problem;
     try
     {
-        const char* fileName = "Src/Test/test.text";
-        FileWriter file(fileName);
-        if(0 != strcmp(file.m_fileName,fileName))
+        std::string fileName = "Src/Test/test.text";
+        FileWriter file(fileName,".txt");
+        if(file.m_fileName != fileName)
             problem += "check 1";
 
 
@@ -42,7 +42,7 @@ void TestFileWriter::testWrite()
     {
         const char *fileName = "Src/Test/test.text";
         std::string str,text = "TATTTTGGCCAATTTTT";
-        FileWriter file(fileName);
+        FileWriter file(fileName,".w");
         file.write("ABCDEFGHIJKLMNOP");
 
     }

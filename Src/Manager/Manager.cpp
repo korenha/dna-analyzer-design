@@ -1,15 +1,6 @@
 #include "Manager.h"
-
 #include <iostream>
-#include "../Exception/MyException.h"
-#include "CommandsManager.h"
-#include "ParamsManager.h"
-#include "../CLI/Params.h"
 #include "Terminal.h"
-#include <sstream>
-#include <vector>
-
-
 
 void Manager::doAction()
 {

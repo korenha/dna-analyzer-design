@@ -1,6 +1,8 @@
 #include "CommandsFactory.h"
 #include "CommandName.h"
-#include "NewCommand.h"
+#include "Commands/NewCommand.h"
+#include "Commands/LoadCommand.h"
+
 namespace CLI{
 
     ICommand *CommandsFactory::getCommand(const std::string &command)
@@ -10,7 +12,7 @@ namespace CLI{
             case CommandName::E_NEW:
                 return (ICommand*)(new NewCommand());
             case CommandName::E_LOAD:
-                break;
+                return (ICommand*)(new LoadCommand());
                 /*....*/
             case CommandName::E_Last:
                 break;
