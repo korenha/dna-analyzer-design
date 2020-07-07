@@ -7,8 +7,7 @@
 class ConsulReader: public IReader
 {
 public:
-    std::string read();
-
+    std::string read()const;
 };
 
 

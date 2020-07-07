@@ -10,8 +10,8 @@
 class IReader
 {
 public:
-    virtual std::string read()const=0;
+    virtual std::string read()const =0;
     virtual ~IReader(){}
 };
-
+//std::string IReader::read() { return NULL;}
 #endif //DNA_IREADER_H

@@ -7,7 +7,7 @@
 class StringReader: public IReader
 {
 public:
-    StringReader(const std::string& data):m_string(data){}
+    StringReader(const std::string &data) : m_string(data){}
     std::string read()const;
 
 private:
