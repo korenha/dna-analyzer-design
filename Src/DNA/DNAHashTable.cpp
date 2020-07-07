@@ -3,8 +3,8 @@
 void DNAHashTable::insert(const DNAMetaData &metaData)
 {
     //mapByNameToId.insert(id));
-    mapByNameToId.insert(pair<std::string,size_t >(metaData.getName(),id));
-    DNAData.insert(pair<size_t ,DNAMetaData >(id,metaData));
+    mapByNameToId.insert(NameToIdPair(metaData.getName(),id));
+    DNAData.insert(MapDnaPair(id,metaData));
     ++id;
 }
 
@@ -25,9 +25,4 @@ const DNAMetaData &DNAHashTable::find(size_t _id) const {
 size_t DNAHashTable::getId(const std::string &name)const {
     return mapByNameToId.find(name)->second;
 }
-
-//const DNAMetaData &DNAHashTable::find(size_t _id)const
-//{
-    //return DNAMetaData();
-//}
 
