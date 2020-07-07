@@ -1,10 +1,5 @@
-//
-// Created by a on 7/6/20.
-//
-
 #ifndef DNAANALYZERPROJECT_PARAMSMANAGER_H
 #define DNAANALYZERPROJECT_PARAMSMANAGER_H
-
 
 #include <string>
 #include "../CLI/Params.h"
@@ -18,6 +13,5 @@ public:
 private:
     std::map<std::string,CLI::Params*> commandMap;
 };
-
 
 #endif //DNAANALYZERPROJECT_PARAMSMANAGER_H

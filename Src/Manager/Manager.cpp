@@ -3,8 +3,8 @@
 #include <iostream>
 #include "../Exception/MyException.h"
 #include "CommandsManager.h"
-#include "CommandParsingManager.h"
-#include "../CLI/IParams.h"
+#include "ParamsManager.h"
+#include "../CLI/Params.h"
 #include <sstream>
 #include <vector>
 
@@ -16,7 +16,7 @@ void Manager::doAction()
     std::cout<<"|--------Start Run-------------|"<<std::endl;
     std::string input,output;
     CommandsManager commandsManager;
-    CommandParsingManager commandParsingManager;
+    ParamsManager commandParsingManager;
     while (1)
     {
         try
@@ -25,7 +25,7 @@ void Manager::doAction()
             input = m_reader->read();
             std::vector<std::string> params = parsingCommand(input);
             checkValidCommandStart(params);
-            output = commandsManager.getCommand(params[3])->run((CLI::IParams*)commandParsingManager.getParams(params[3], std::vector<std::string>(params.begin() + 4, params.end())));
+            output = commandsManager.getCommand(params[3])->run((CLI::Params*)commandParsingManager.getParams(params[3], std::vector<std::string>(params.begin() + 4, params.end())));
             m_writer->write(output.c_str());
             input.clear();
         }

@@ -6,20 +6,20 @@
 #include "../CLI/CommandsParsingFactory.h"
 using std::map;
 
-CLI::IParams *ParamsManager::getParams(const std::string &commandName, const std::vector<std::string> &params){
-    map<std::string,CLI::IParams*>::iterator indexCommand = commandParsingMap.find(commandName);
-    if(indexCommand != commandParsingMap.end())
+CLI::Params *ParamsManager::getParams(const std::string &commandName, const std::vector<std::string> &params){
+    map<std::string,CLI::Params*>::iterator indexCommand = commandMap.find(commandName);
+    if(indexCommand != commandMap.end())
     {
         indexCommand->second->set(params);
         return indexCommand->second;
     }
-    commandParsingMap.insert(std::pair<std::string,CLI::IParams*>(commandName, CLI::CommandsParsingFactory::getParams(commandName, params)));
-    return commandParsingMap.find(commandName)->second;
+    commandMap.insert(std::pair<std::string,CLI::Params*>(commandName, CLI::CommandsParsingFactory::getParams(commandName, params)));
+    return commandMap.find(commandName)->second;
 }
 
 ParamsManager::~ParamsManager() {
-    map<std::string,CLI::IParams*>::iterator it;
-    for ( it = commandParsingMap.begin(); it != commandParsingMap.end(); ++it)
+    map<std::string,CLI::Params*>::iterator it;
+    for ( it = commandMap.begin(); it != commandMap.end(); ++it)
     {
         delete it->second;
     }
