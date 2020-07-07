@@ -6,11 +6,20 @@
 using std::map;
 CML::ICommand *CommandsManager::getCommand(const std::string &command)
 {
-    map<std::string,CML::ICommand*>::iterator indexCommand = commandParsingMap.find(command);
-    if(indexCommand != commandParsingMap.end())
+    map<std::string,CML::ICommand*>::iterator indexCommand = commandsMap.find(command);
+    if(indexCommand != commandsMap.end())
     {
         return indexCommand->second;
     }
-    commandParsingMap.insert(std::pair<std::string,CML::ICommand*>(command, CML::CommandFactory::getCommand(command)));
-    return commandParsingMap.find(command)->second;
+    commandsMap.insert(std::pair<std::string,CML::ICommand*>(command, CML::CommandFactory::getCommand(command)));
+    return commandsMap.find(command)->second;
+}
+
+CommandsManager::~CommandsManager()
+{
+    map<std::string,CML::ICommand*>::iterator it;
+    for ( it = commandsMap.begin(); it != commandsMap.end(); ++it)
+    {
+        delete it->second;
+    }
 }
