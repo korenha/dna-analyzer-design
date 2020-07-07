@@ -1,9 +1,9 @@
-#include "CommandFactory.h"
+#include "CommandsFactory.h"
 #include "CommandName.h"
 #include "NewCommand.h"
 namespace CLI{
 
-    ICommand *CommandFactory::getCommand(const std::string &command)
+    ICommand *CommandsFactory::getCommand(const std::string &command)
     {
         switch (CommandName::getECommand(command))
         {

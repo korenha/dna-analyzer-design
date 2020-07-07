@@ -3,17 +3,18 @@
 //
 
 #include <vector>
-#include "CommandsParsingFactory.h"
-#include "NewCommandParsing.h"
+#include "CommandsParamsFactory.h"
+#include "NewCommandParams.h"
 #include "CommandName.h"
 namespace CLI{
 
-    IParams *CommandsParsingFactory::getParams(const std::string &commandName, const std::vector<std::string> &params)
+    Params *CommandsParamsFactory::getParams(const std::string &commandName, const std::vector<std::string> &params)
     {
         switch (CommandName::getECommand(commandName))
         {
-            case CommandName::E_NEW:
-                return (IParams*)(new NewCommandParsing(params));
+            case CommandName::E_NEW: {
+                return (Params *)(new NewCommandParams(params));
+            }
             case CommandName::E_LOAD:
                 break;
                 /*....*/

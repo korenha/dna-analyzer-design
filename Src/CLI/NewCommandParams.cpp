@@ -1,18 +1,18 @@
 #include <stdexcept>
 #include <sstream>
-#include "NewCommandParsing.h"
+#include "NewCommandParams.h"
 #include "../Exception/MyException.h"
 
 namespace CLI{
 
-    size_t NewCommandParsing::numDefault = 1;
-    NewCommandParsing::NewCommandParsing(const std::vector<std::string>& parmas)
+    size_t NewCommandParams::numDefault = 1;
+    NewCommandParams::NewCommandParams(const std::vector<std::string>& parmas)
     {
         m_params.resize(2);
         set(parmas);
     }
 
-    void NewCommandParsing::set(const std::vector<std::string> &newParams)
+    void NewCommandParams::set(const std::vector<std::string> &newParams)
     {
         if(newParams.size() > 2)
         {

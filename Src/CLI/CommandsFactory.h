@@ -2,15 +2,15 @@
 // Created by a on 7/6/20.
 //
 
-#ifndef DNAANALYZERPROJECT_COMMANDFACTORY_H
-#define DNAANALYZERPROJECT_COMMANDFACTORY_H
+#ifndef DNAANALYZERPROJECT_COMMANDSFACTORY_H
+#define DNAANALYZERPROJECT_COMMANDSFACTORY_H
 
 
 #include <string>
 #include "ICommand.h"
 namespace CLI{
 
-    class CommandFactory
+    class CommandsFactory
     {
     public:
         enum ECommand{
@@ -23,12 +23,12 @@ namespace CLI{
         static ICommand* getCommand(const std::string &command);
 
     private:
-        CommandFactory();
-        CommandFactory(const CommandFactory&);
+        CommandsFactory();
+        CommandsFactory(const CommandsFactory&);
 
     };
 
 }
 
 
-#endif //DNAANALYZERPROJECT_COMMANDFACTORY_H
+#endif //DNAANALYZERPROJECT_COMMANDSFACTORY_H
