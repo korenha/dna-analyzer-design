@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include <sstream>
 #include "NewCommandParams.h"
-#include "../Exception/MyException.h"
+#include "../../Exception/MyException.h"
 
 namespace CLI{
 

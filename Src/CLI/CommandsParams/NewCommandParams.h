@@ -2,8 +2,8 @@
 #define DNAANALYZERPROJECT_NEWCOMMANDPARAMS_H
 
 #include <string>
-#include "Params.h"
-#include "../Reader/StringReader.h"
+#include "../Params.h"
+#include "../../Reader/StringReader.h"
 
 namespace CLI {
 
