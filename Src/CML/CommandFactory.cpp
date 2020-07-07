@@ -8,7 +8,7 @@ namespace CML{
         switch (CommandName::getECommand(command))
         {
             case CommandName::E_NEW:
-                return new NewCommand();
+                return (ICommand*)(new NewCommand());
             case CommandName::E_LOAD:
                 break;
                 /*....*/

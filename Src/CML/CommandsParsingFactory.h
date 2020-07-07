@@ -9,7 +9,7 @@ namespace CML{
 class CommandsParsingFactory
 {
 public:
-    static IParams *getParams(const std::string &commandName, const std::string &params);
+    static IParams *getParams(const std::string &commandName, const std::vector<std::string> &params);
 
 private:
     CommandsParsingFactory();

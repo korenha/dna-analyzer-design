@@ -6,6 +6,7 @@
 #define DNAANALYZERPROJECT_COMMANDFACTORY_H
 
 
+#include <string>
 #include "ICommand.h"
 namespace CML{
 

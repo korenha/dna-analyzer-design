@@ -1,12 +1,22 @@
+//
+// Created by a on 7/6/20.
+//
+
+#include <iostream>
 #include "NewCommand.h"
 #include "../DNA/IDNAData.h"
-#include "../CML/NewCommandParsing.h"
+#include "NewCommandParsing.h"
 #include "../Reader/StringReader.h"
-
-namespace CML {
-    void NewCommand::run(IParams* params)
-    {
-        (IDNAData::getDNAData()).insert(DNAMetaData(StringReader(((NewCommandParsing*)params)->m_dna),((NewCommandParsing*)params)->m_name));
+#include "sstream"
+namespace CML{
+    std::string NewCommand::run(IParams *params) {
+        std::vector<std::string> parameters = params->get();
+        DNAMetaData newDna(StringReader(*parameters.begin()),parameters[1]);
+        (IDNAData::getDNAData()).insert(newDna);
+        std::stringstream out;
+        out << '['<<(IDNAData::getDNAData()).getId(parameters[1])<<"] ";
+        out << (IDNAData::getDNAData()).find(parameters[1]).getName()<<": ";
+        out << (IDNAData::getDNAData()).find(parameters[1]).getDNASeq()<< std::endl;
+        return out.str();
     }
-
 }

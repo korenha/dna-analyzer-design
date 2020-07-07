@@ -3,14 +3,15 @@
 
 #include <string>
 #include "IParams.h"
+#include "../Reader/StringReader.h"
+
 namespace CML {
 
 //#include "../DNA/DNAMetaData.h"
     struct NewCommandParsing: public CML::IParams
     {
-        NewCommandParsing(const std::string &params);
-        std::string m_dna;
-        std::string m_name;
+        void set(const std::vector<std::string>& newParams);
+        NewCommandParsing(const std::vector<std::string>& parmas);
 
     };
 }

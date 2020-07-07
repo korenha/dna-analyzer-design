@@ -8,12 +8,12 @@
 #include "CommandName.h"
 namespace CML{
 
-    IParams *CommandsParsingFactory::getParams(const std::string &commandName, const std::string &params)
+    IParams *CommandsParsingFactory::getParams(const std::string &commandName, const std::vector<std::string> &params)
     {
         switch (CommandName::getECommand(commandName))
         {
             case CommandName::E_NEW:
-                return new NewCommandParsing(params);
+                return (IParams*)(new NewCommandParsing(params));
             case CommandName::E_LOAD:
                 break;
                 /*....*/
