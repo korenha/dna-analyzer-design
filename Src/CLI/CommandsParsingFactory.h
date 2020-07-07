@@ -2,14 +2,14 @@
 #define DNAANALYZERPROJECT_COMMANDSPARSINGFACTORY_H
 
 #include <string>
-#include "IParams.h"
+#include "Params.h"
 
 namespace CLI{
 
 class CommandsParsingFactory
 {
 public:
-    static IParams *getParams(const std::string &commandName, const std::vector<std::string> &params);
+    static Params *getParams(const std::string &commandName, const std::vector<std::string> &params);
 
 private:
     CommandsParsingFactory();

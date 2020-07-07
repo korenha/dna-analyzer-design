@@ -10,7 +10,7 @@
 namespace CLI{
     class ICreationCommand:public ICommand
     {
-        std::string run(IParams* params)=0;
+        std::string run(Params* params)=0;
     };
 }
 #endif //DNAANALYZERPROJECT_ICREATIONCOMMAND_H

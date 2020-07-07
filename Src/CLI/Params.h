@@ -1,18 +1,18 @@
-#ifndef DNAANALYZERPROJECT_IPARAMS_H
-#define DNAANALYZERPROJECT_IPARAMS_H
+#ifndef DNAANALYZERPROJECT_PARAMS_H
+#define DNAANALYZERPROJECT_PARAMS_H
 
 #include <vector>
 
 namespace CLI
 {
-    struct IParams {
+    struct Params {
     public:
         virtual void set(const std::vector<std::string>& params)=0;
         const std::vector<std::string>& get(){ return m_params;}
-        virtual ~IParams(){}
+        virtual ~Params(){}
 
     protected:
         std::vector<std::string> m_params;
     };
 }
-#endif //DNAANALYZERPROJECT_IPARAMS_H
+#endif //DNAANALYZERPROJECT_PARAMS_H

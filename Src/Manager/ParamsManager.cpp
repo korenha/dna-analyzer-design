@@ -2,11 +2,11 @@
 // Created by a on 7/6/20.
 //
 
-#include "CommandParsingManager.h"
+#include "ParamsManager.h"
 #include "../CLI/CommandsParsingFactory.h"
 using std::map;
 
-CLI::IParams *CommandParsingManager::getParams(const std::string &commandName, const std::vector<std::string> &params){
+CLI::IParams *ParamsManager::getParams(const std::string &commandName, const std::vector<std::string> &params){
     map<std::string,CLI::IParams*>::iterator indexCommand = commandParsingMap.find(commandName);
     if(indexCommand != commandParsingMap.end())
     {
@@ -17,7 +17,7 @@ CLI::IParams *CommandParsingManager::getParams(const std::string &commandName, c
     return commandParsingMap.find(commandName)->second;
 }
 
-CommandParsingManager::~CommandParsingManager() {
+ParamsManager::~ParamsManager() {
     map<std::string,CLI::IParams*>::iterator it;
     for ( it = commandParsingMap.begin(); it != commandParsingMap.end(); ++it)
     {

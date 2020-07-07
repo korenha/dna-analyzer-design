@@ -11,7 +11,7 @@ namespace CLI{
 
 class NewCommand:public ICreationCommand
 {
-    std::string run(IParams* params);
+    std::string run(Params* params);
 
 };
 
