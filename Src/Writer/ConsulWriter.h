@@ -6,6 +6,7 @@
 
 class ConsulWriter: public IWriter
 {
+public:
     void write(const char* output)const;
 };
 
