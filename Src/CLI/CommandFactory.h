@@ -8,7 +8,7 @@
 
 #include <string>
 #include "ICommand.h"
-namespace CML{
+namespace CLI{
 
     class CommandFactory
     {

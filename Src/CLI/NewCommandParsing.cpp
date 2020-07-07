@@ -3,7 +3,7 @@
 #include "NewCommandParsing.h"
 #include "../Exception/MyException.h"
 
-namespace CML{
+namespace CLI{
 
     NewCommandParsing::NewCommandParsing(const std::vector<std::string>& parmas)
     {

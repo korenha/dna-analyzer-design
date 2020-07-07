@@ -6,7 +6,7 @@
 #define DNAANALYZERPROJECT_COMMANDNAME_H
 
 #include <string>
-namespace CML{
+namespace CLI{
 class CommandName
 {
 public:

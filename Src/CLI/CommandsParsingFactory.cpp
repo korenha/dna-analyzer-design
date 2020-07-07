@@ -6,7 +6,7 @@
 #include "CommandsParsingFactory.h"
 #include "NewCommandParsing.h"
 #include "CommandName.h"
-namespace CML{
+namespace CLI{
 
     IParams *CommandsParsingFactory::getParams(const std::string &commandName, const std::vector<std::string> &params)
     {

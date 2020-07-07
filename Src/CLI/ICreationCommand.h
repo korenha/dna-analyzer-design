@@ -7,7 +7,7 @@
 
 #include "ICommand.h"
 
-namespace CML{
+namespace CLI{
     class ICreationCommand:public ICommand
     {
         std::string run(IParams* params)=0;

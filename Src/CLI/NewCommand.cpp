@@ -8,7 +8,7 @@
 #include "NewCommandParsing.h"
 #include "../Reader/StringReader.h"
 #include "sstream"
-namespace CML{
+namespace CLI{
     std::string NewCommand::run(IParams *params) {
         std::vector<std::string> parameters = params->get();
         DNAMetaData newDna(StringReader(parameters.front()),parameters[1]);
@@ -16,7 +16,7 @@ namespace CML{
         std::stringstream out;
         out << '['<<(IDNAData::getDNAData()).getId(parameters[1])<<"] ";
         out << (IDNAData::getDNAData()).find(parameters[1]).getName()<<": ";
-        out << (IDNAData::getDNAData()).find(parameters[1]).getDNASeq()<< std::endl;
+        out << (IDNAData::getDNAData()).find(parameters[1])<< std::endl;
         return out.str();
     }
 }

@@ -4,7 +4,7 @@
 
 #include <stdexcept>
 #include "CommandName.h"
-namespace CML{
+namespace CLI{
     std::string commandsName[CommandName::E_Last+1] = {"new"};
 
     CommandName::ECommand CommandName::getECommand(const std::string &commandName)

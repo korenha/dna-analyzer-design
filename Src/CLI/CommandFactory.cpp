@@ -1,7 +1,7 @@
 #include "CommandFactory.h"
 #include "CommandName.h"
 #include "NewCommand.h"
-namespace CML{
+namespace CLI{
 
     ICommand *CommandFactory::getCommand(const std::string &command)
     {

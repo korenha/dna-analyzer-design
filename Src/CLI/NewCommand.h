@@ -7,7 +7,7 @@
 
 #include "ICreationCommand.h"
 
-namespace CML{
+namespace CLI{
 
 class NewCommand:public ICreationCommand
 {

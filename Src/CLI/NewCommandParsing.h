@@ -5,10 +5,10 @@
 #include "IParams.h"
 #include "../Reader/StringReader.h"
 
-namespace CML {
+namespace CLI {
 
 //#include "../DNA/DNAMetaData.h"
-    struct NewCommandParsing: public CML::IParams
+    struct NewCommandParsing: public CLI::IParams
     {
         void set(const std::vector<std::string>& newParams);
         NewCommandParsing(const std::vector<std::string>& parmas);

@@ -3,7 +3,7 @@
 
 #include <vector>
 
-namespace CML
+namespace CLI
 {
     struct IParams {
     public:

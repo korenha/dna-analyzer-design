@@ -7,7 +7,7 @@
 
 #include "IParams.h"
 
-namespace CML{
+namespace CLI{
     class ICommand{
     public:
         virtual std::string run(IParams* params)=0;

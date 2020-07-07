@@ -7,16 +7,16 @@
 
 
 #include <string>
-#include "../CML/IParams.h"
+#include "../CLI/IParams.h"
 #include <map>
 #include <vector>
 
 class CommandParsingManager {
 public:
-    CML::IParams* getParams(const std::string& commandName, const std::vector<std::string> &params);
+    CLI::IParams* getParams(const std::string& commandName, const std::vector<std::string> &params);
     ~CommandParsingManager();
 private:
-    std::map<std::string,CML::IParams*> commandParsingMap;
+    std::map<std::string,CLI::IParams*> commandParsingMap;
 };
 
 

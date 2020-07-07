@@ -4,20 +4,20 @@
 #include <vector>
 #include "CommandsManager.h"
 using std::map;
-CML::ICommand *CommandsManager::getCommand(const std::string &command)
+CLI::ICommand *CommandsManager::getCommand(const std::string &command)
 {
-    map<std::string,CML::ICommand*>::iterator indexCommand = commandsMap.find(command);
+    map<std::string,CLI::ICommand*>::iterator indexCommand = commandsMap.find(command);
     if(indexCommand != commandsMap.end())
     {
         return indexCommand->second;
     }
-    commandsMap.insert(std::pair<std::string,CML::ICommand*>(command, CML::CommandFactory::getCommand(command)));
+    commandsMap.insert(std::pair<std::string,CLI::ICommand*>(command, CLI::CommandFactory::getCommand(command)));
     return commandsMap.find(command)->second;
 }
 
 CommandsManager::~CommandsManager()
 {
-    map<std::string,CML::ICommand*>::iterator it;
+    map<std::string,CLI::ICommand*>::iterator it;
     for ( it = commandsMap.begin(); it != commandsMap.end(); ++it)
     {
         delete it->second;

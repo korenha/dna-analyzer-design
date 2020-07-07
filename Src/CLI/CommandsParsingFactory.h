@@ -4,7 +4,7 @@
 #include <string>
 #include "IParams.h"
 
-namespace CML{
+namespace CLI{
 
 class CommandsParsingFactory
 {
