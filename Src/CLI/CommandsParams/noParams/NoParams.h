@@ -6,6 +6,7 @@
 namespace CLI{
     struct NoParams:Params
     {
+    public:
         void set(const std::vector<std::string>& newParams){}
     };
 }

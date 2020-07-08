@@ -10,6 +10,7 @@ namespace CLI {
 //#include "../DNA/DNAMetaData.h"
     struct NewCommandParams: public CLI::Params
     {
+    public:
         void set(const std::vector<std::string>& newParams);
         NewCommandParams(const std::vector<std::string>& parmas);
 

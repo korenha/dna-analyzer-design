@@ -11,6 +11,7 @@ namespace CLI {
 //#include "../DNA/DNAMetaData.h"
     struct LoadCommandParams: public Params
     {
+    public:
         void set(const std::vector<std::string>& newParams);
         LoadCommandParams(const std::vector<std::string>& params);
 

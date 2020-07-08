@@ -5,6 +5,7 @@
 namespace CLI{
     struct ReplaceCommandParams :public Params
     {
+    public:
         void set(const std::vector<std::string>& newParams);
         ReplaceCommandParams(const std::vector<std::string>& params);
 

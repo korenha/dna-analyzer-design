@@ -6,6 +6,7 @@
 namespace CLI{
     struct SaveCommandParams : public Params
     {
+    public:
         void set(const std::vector<std::string>& newParams);
         SaveCommandParams(const std::vector<std::string>& params);
 

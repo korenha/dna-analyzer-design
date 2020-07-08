@@ -6,6 +6,7 @@ namespace CLI
 {
     struct PairCommandParams :public Params
     {
+    public:
         void set(const std::vector<std::string>& newParams);
         PairCommandParams(const std::vector<std::string>& params);
     };

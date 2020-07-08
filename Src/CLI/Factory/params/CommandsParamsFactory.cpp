@@ -10,6 +10,10 @@
 #include "../../CommandsParams/creation/dup/DupCommandParams.h"
 #include "../../CommandsParams/management/save/SaveCommandParams.h"
 #include "../../CommandsParams/noParams/NoParams.h"
+#include "../../CommandsParams/manipulation/slice/SliceCommandParams.h"
+#include "../../CommandsParams/manipulation/replace/ReplaceCommandParams.h"
+#include "../../CommandsParams/manipulation/concat/ConcatCommandParams.h"
+#include "../../CommandsParams/manipulation/pair/PairCommandParams.h"
 
 namespace CLI{
 
@@ -30,13 +34,13 @@ namespace CLI{
             case CommandName::E_SAVE:
                 return (Params *)(new SaveCommandParams(params));
             case CommandName::E_SLICE:
-                return NULL;
+                return (Params *)(new SliceCommandParams(params));
             case CommandName::E_REPLACE:
-                return NULL;
+                return (Params *)(new ReplaceCommandParams(params));
             case CommandName::E_CONCAT:
-                return NULL;
+                return (Params *)(new ConcatCommandParams(params));
             case CommandName::E_PAIR:
-                return NULL;
+                return (Params *)(new PairCommandParams(params));
                 /*....*/
             case CommandName::E_Last:
                 break;

@@ -8,6 +8,7 @@
 namespace CLI{
     struct DupCommandParams :public Params
     {
+    public:
         void set(const std::vector<std::string>& newParams);
         DupCommandParams(const std::vector<std::string>& params);
 

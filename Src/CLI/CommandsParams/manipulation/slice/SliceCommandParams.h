@@ -5,6 +5,7 @@
 namespace CLI{
     struct SliceCommandParams:public Params
     {
+    public:
         void set(const std::vector<std::string>& newParams);
         SliceCommandParams(const std::vector<std::string>& params);
     };
