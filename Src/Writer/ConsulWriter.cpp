@@ -5,6 +5,6 @@
 
 void ConsulWriter::write(const char *output)const
 {
-    std::cout<<output<<std::endl;
+    std::cout<<output;
 
 }

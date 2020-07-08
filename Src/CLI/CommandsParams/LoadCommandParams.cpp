@@ -17,7 +17,7 @@ namespace CLI{
     {
         if(newParams.size() > 2)
         {
-            throw std::invalid_argument("too much arguments");
+            throw std::invalid_argument("Error: too much arguments");
         }
         if(newParams.size() == 0)
         {

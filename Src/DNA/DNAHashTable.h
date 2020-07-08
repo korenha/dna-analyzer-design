@@ -23,7 +23,6 @@ public:
     //add functions
     //void deleteDNa();
 private:
-    friend class DNAData;
     size_t id;
     typedef __gnu_cxx::hash_map<std::string ,size_t > NameToId;
     typedef __gnu_cxx::hash_map<size_t ,DNAMetaData > MapDna;

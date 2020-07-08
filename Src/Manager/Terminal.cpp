@@ -5,7 +5,7 @@
 #include "CommandsManager.h"
 #include "../Exception/MyException.h"
 static std::vector<std::string> parsingCommand(const std::string& input);
-static void checkValidCommandStart(const std::vector<std::string> &params);/*> cmd >>>*/
+//static void checkValidCommandStart(const std::vector<std::string> &params);/*> cmd >>>*/
 
 void Terminal::run(IReader *readFrom, IWriter *writeTo)
 {
@@ -31,7 +31,7 @@ void Terminal::run(IReader *readFrom, IWriter *writeTo)
     }
 }
 
-static void checkValidCommandStart(const std::vector<std::string> &params)
+/*static void checkValidCommandStart(const std::vector<std::string> &params)
 {
 
     if(params[0] != ">")
@@ -47,7 +47,7 @@ static void checkValidCommandStart(const std::vector<std::string> &params)
         throw MyException("SyntaxError: Expected get '>>>' ");
     }
 }
-
+*/
 static std::vector<std::string> parsingCommand(const std::string& input)
 {
     std::vector<std::string> parsedVector;

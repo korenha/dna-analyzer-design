@@ -19,7 +19,7 @@ void TestFileWriter::testCtor()
     try
     {
         std::string fileName = "Src/Test/test.text";
-        FileWriter file(fileName,".txt");
+        FileWriter file(fileName);
         if(file.m_fileName != fileName)
             problem += "check 1";
 
@@ -42,7 +42,7 @@ void TestFileWriter::testWrite()
     {
         const char *fileName = "Src/Test/test.text";
         std::string str,text = "TATTTTGGCCAATTTTT";
-        FileWriter file(fileName,".w");
+        FileWriter file(fileName);
         file.write("ABCDEFGHIJKLMNOP");
 
     }

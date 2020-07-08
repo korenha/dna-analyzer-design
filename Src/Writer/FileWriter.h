@@ -12,7 +12,7 @@
 class FileWriter: public IWriter
 {
 public:
-    FileWriter(const std::string &fileName, const std::string &postFile);
+    FileWriter(const std::string &fileName);
     void write(const char* data)const;
 
 private:

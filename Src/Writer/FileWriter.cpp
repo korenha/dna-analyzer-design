@@ -18,4 +18,4 @@ void FileWriter::write(const char *data)const
     file.close();
 }
 
-FileWriter::FileWriter(const std::string &fileName, const std::string &postFile) : m_fileName((fileName + postFile)){}
+FileWriter::FileWriter(const std::string &fileName) : m_fileName((fileName)){}
