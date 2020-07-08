@@ -5,10 +5,12 @@
 #include "Commands/DupCommand.h"
 #include "Commands/management/SaveCommand.h"
 #include "Commands/DoNothing.h"
+#include "Commands/controlCommand/QuitCommand.h"
 
 namespace CLI{
 
-    ICommand *CommandsFactory::getCommand(const std::string &command)
+    ICommand *CommandsFactory::getCommand(const std::string &command, const IReader *const reader,
+                                          const IWriter *const writer)
     {
         switch (CommandName::getECommand(command))
         {
@@ -23,6 +25,8 @@ namespace CLI{
             case CommandName::E_SAVE:
                 return (ICommand*)(new SaveCommand());
                 /*....*/
+            case CommandName::E_QUIT:
+                return (ICommand*)(new QuitCommand(reader,writer));
             case CommandName::E_Last:
                 break;
         }

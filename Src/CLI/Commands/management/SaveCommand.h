@@ -7,7 +7,7 @@ namespace CLI{
     class SaveCommand:public IManagementCommand
     {
     public:
-        std::string run(Params* params);
+        std::string run(Params *params);
     };
 
 }

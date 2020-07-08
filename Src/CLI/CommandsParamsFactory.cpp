@@ -34,7 +34,7 @@ namespace CLI{
             case CommandName::E_Last:
                 break;
             default:
-                return NULL;
+                return (Params *)(new NoParams());
         }
         return NULL;
     }

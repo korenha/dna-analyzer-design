@@ -17,6 +17,7 @@ public:
         E_DUP,
         E_SAVE,
         //....
+        E_QUIT,
         E_Last
     };
     static ECommand getECommand(const std::string& commandName);

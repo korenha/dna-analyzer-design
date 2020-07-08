@@ -6,10 +6,10 @@
 #include "../../ICommand.h"
 
 namespace CLI{
-class IManagementCommand :public ICommand
+    class IManagementCommand :public ICommand
     {
     public:
-        std::string run(Params* params)=0;
+        std::string run(Params *params) =0;
     };
 }
 

@@ -9,7 +9,7 @@
 class CommandsManager
 {
 public:
-    CLI::ICommand* getCommand(const std::string &command);
+    CLI::ICommand *getCommand(const std::string &command, const IReader *const reader, const IWriter *const writer);
     ~CommandsManager();
 private:
     std::map<std::string,CLI::ICommand*> commandsMap;

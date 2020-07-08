@@ -12,7 +12,7 @@
 class Terminal
 {
 public:
-    static void run(IReader* readFrom,IWriter* writeTo);
+    static void run(const IReader* readFrom,const IWriter* writeTo);
 };
 
 

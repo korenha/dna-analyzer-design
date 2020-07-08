@@ -4,14 +4,16 @@
 #include <vector>
 #include "CommandsManager.h"
 using std::map;
-CLI::ICommand *CommandsManager::getCommand(const std::string &command)
+CLI::ICommand *CommandsManager::getCommand(const std::string &command, const IReader *const reader,
+                                           const IWriter *const writer)
 {
     map<std::string,CLI::ICommand*>::iterator indexCommand = commandsMap.find(command);
     if(indexCommand != commandsMap.end())
     {
         return indexCommand->second;
     }
-    commandsMap.insert(std::pair<std::string,CLI::ICommand*>(command, CLI::CommandsFactory::getCommand(command)));
+    commandsMap.insert(std::pair<std::string,CLI::ICommand*>(command, CLI::CommandsFactory::getCommand(command, reader,
+                                                                                                       writer)));
     return commandsMap.find(command)->second;
 }
 

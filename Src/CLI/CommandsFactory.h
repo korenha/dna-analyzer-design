@@ -8,12 +8,16 @@
 
 #include <string>
 #include "ICommand.h"
+#include "../Reader/IReader.h"
+#include "../Writer/IWriter.h"
+
 namespace CLI{
 
     class CommandsFactory
     {
     public:
-        static ICommand* getCommand(const std::string &command);
+        static ICommand *
+        getCommand(const std::string &command, const IReader *const reader, const IWriter *const writer);
 
     private:
         CommandsFactory();
