@@ -3,7 +3,7 @@
 //
 #include <string>
 #include "TestDnaSeq.h"
-#include "../GlobalFunction/globalFunctions.h"
+#include "../Utils/isConsistOf.h"
 #include <iostream>
 #include <string.h>
 

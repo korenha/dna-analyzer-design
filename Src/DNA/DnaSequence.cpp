@@ -1,6 +1,6 @@
 #include "DnaSequence.h"
 #include "../Exception/MyException.h"
-#include "../GlobalFunction/globalFunctions.h"
+#include "../Utils/isConsistOf.h"
 #include <string.h>
 #include <iostream>
 #include "../Reader/IReader.h"

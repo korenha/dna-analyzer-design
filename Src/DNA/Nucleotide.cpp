@@ -2,7 +2,7 @@
 // Created by a on 7/5/20.
 //
 #include "Nucleotide.h"
-#include "../GlobalFunction/globalFunctions.h"
+#include "../Utils/isConsistOf.h"
 #include <iostream>
 const char* Nucleotide::s_baseDna = "ACGT";
 
