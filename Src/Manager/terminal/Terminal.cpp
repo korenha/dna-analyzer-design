@@ -22,11 +22,7 @@ void Terminal::run(const IReader* readFrom,const IWriter* writeTo)
             input = readFrom->read();
             std::vector<std::string> params = parsingCommand(input);
             //checkValidCommandStart(params);
-            output = commandsManager.getCommand(params[0], readFrom, writeTo)->run(commandParsingManager.getParams(params[0],
-                                                                                                            std::vector<std::string>(
-                                                                                                        params.begin() +
-                                                                                                        1,
-                                                                                                        params.end())));
+            output = commandsManager.getCommand(params[0], readFrom, writeTo)->run(commandParsingManager.getParams(params[0],params));
             writeTo->write(output.c_str());
             input.clear();
         }

@@ -15,7 +15,7 @@ namespace CLI
 
     void DupCommandParams::set(const std::vector<std::string> &newParams)
     {
-        if(newParams.size() > 2)
+        if(newParams.size() > 3)
         {
             throw std::invalid_argument("Error: invalid_argument:: too much arguments");
         }
@@ -23,20 +23,20 @@ namespace CLI
         {
             throw std::invalid_argument("Error: invalid_argument:: missing argument");
         }
-        m_params[0] = newParams[0];
+        m_params[0] = newParams[1];
 
-        if(newParams[0][0] != '#')
+        if(newParams[1][0] != '#')
         {
             throw MyException("Error: SyntaxError: Expected start id with # in the second parameter");
         }
         m_params[0].erase(0,1);
-        if(newParams.size() == 2)
+        if(newParams.size() == 3)
         {
-            if(newParams[1][0] != '@')
+            if(newParams[2][0] != '@')
             {
                 throw MyException("Error: SyntaxError: Expected start with @ in the second parameter");
             }
-            m_params.push_back(newParams[1]);
+            m_params.push_back(newParams[2]);
             m_params[1].erase(m_params[1].begin());
         }
         else

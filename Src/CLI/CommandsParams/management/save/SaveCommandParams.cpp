@@ -15,7 +15,7 @@ namespace CLI
 
     void SaveCommandParams::set(const std::vector<std::string> &newParams)
     {
-        if(newParams.size() > 2)
+        if(newParams.size() > 3)
         {
             throw std::invalid_argument("Error: too much arguments");
         }
@@ -25,10 +25,10 @@ namespace CLI
             throw std::invalid_argument("Error: missing argument");
         }
 
-        m_params[0] = newParams[0];
+        m_params[0] = newParams[1];
         setTheFirstArgumentToBeId();
 
-        if(newParams.size() == 1)
+        if(newParams.size() == 2)
         {
             std::stringstream idAsString(m_params[0]);
             size_t id;
@@ -36,8 +36,8 @@ namespace CLI
             m_params[1] = IDNAData::getDNAData().find(id).getName() + ".rawdna";
             return;
         }
-        m_params[1] = newParams[1];
-        if(newParams[1].find_last_of('.') == std::string::npos)
+        m_params[1] = newParams[2];
+        if(newParams[2].find_last_of('.') == std::string::npos)
         {
             m_params[1]  += ".rawdna";
         }

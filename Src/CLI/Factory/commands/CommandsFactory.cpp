@@ -6,6 +6,10 @@
 #include "../../Commands/management/save/SaveCommand.h"
 #include "../../Commands/doNothing/DoNothing.h"
 #include "../../Commands/controlCommand/quit/QuitCommand.h"
+#include "../../Commands/manipulation/slice/SliceCommand.h"
+#include "../../Commands/manipulation/replace/ReplaceCommand.h"
+#include "../../Commands/manipulation/concat/ConcatCommand.h"
+#include "../../Commands/manipulation/pair/PairCommand.h"
 
 namespace CLI{
 
@@ -22,14 +26,21 @@ namespace CLI{
                 return (ICommand*)(new LoadCommand());
             case CommandName::E_DUP:
                 return (ICommand*)(new DupCommand());
+            case CommandName::E_SLICE:
+                return (ICommand*)(new SliceCommand());
+            case CommandName::E_REPLACE:
+                return (ICommand*)(new ReplaceCommand());
+            case CommandName::E_CONCAT:
+                return (ICommand*)(new ConcatCommand());
+            case CommandName::E_PAIR:
+                return (ICommand*)(new PairCommand());
             case CommandName::E_SAVE:
                 return (ICommand*)(new SaveCommand());
                 /*....*/
             case CommandName::E_QUIT:
                 return (ICommand*)(new QuitCommand(reader,writer));
-            case CommandName::E_Last:
-                break;
+            default:
+                return NULL;
         }
-        return NULL;
     }
 }

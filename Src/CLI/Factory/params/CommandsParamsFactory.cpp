@@ -29,7 +29,14 @@ namespace CLI{
                 return (Params *)(new DupCommandParams(params));
             case CommandName::E_SAVE:
                 return (Params *)(new SaveCommandParams(params));
-
+            case CommandName::E_SLICE:
+                return NULL;
+            case CommandName::E_REPLACE:
+                return NULL;
+            case CommandName::E_CONCAT:
+                return NULL;
+            case CommandName::E_PAIR:
+                return NULL;
                 /*....*/
             case CommandName::E_Last:
                 break;

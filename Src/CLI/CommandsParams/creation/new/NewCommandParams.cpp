@@ -14,23 +14,23 @@ namespace CLI{
 
     void NewCommandParams::set(const std::vector<std::string> &newParams)
     {
-        if(newParams.size() > 2)
+        if(newParams.size() > 3)
         {
             throw std::invalid_argument("too much arguments");
         }
-        if(newParams.size() == 0)
+        if(newParams.size() == 1)
         {
             throw std::invalid_argument("missing argument");
         }
-        m_params[0] = newParams[0];
-        if(newParams.size() == 2)
+        m_params[0] = newParams[1];
+        if(newParams.size() == 1)
         {
-            if(newParams[1][0] != '@')
+            if(newParams[2][0] != '@')
             {
                 throw MyException("SyntaxError: Expected strt with @ in the second parameter");
             }
-            m_params[1] = newParams[1];
-            m_params[1].erase(m_params[1].begin());
+            m_params[1] = newParams[2];
+            m_params[1].erase(0,1);
         }
         else
         {

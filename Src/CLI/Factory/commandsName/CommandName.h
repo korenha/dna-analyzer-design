@@ -15,6 +15,10 @@ public:
         E_NEW,
         E_LOAD,
         E_DUP,
+        E_SLICE,
+        E_REPLACE,
+        E_CONCAT,
+        E_PAIR,
         E_SAVE,
         //....
         E_QUIT,
