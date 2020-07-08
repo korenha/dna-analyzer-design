@@ -1,4 +1,4 @@
-#include "globalFunctions.h"
+#include "isConsistOf.h"
 #include <string.h>
 
 
