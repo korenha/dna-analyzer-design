@@ -1,10 +1,12 @@
 #include <iostream>
 #include <sstream>
+#include <backward/hash_map>
 #include "LoadCommandParams.h"
 #include "../../Exception/MyException.h"
+#include "../../Utils/HashForString.h"
 
 namespace CLI{
-    size_t LoadCommandParams::numDefault = 1;
+    __gnu_cxx::hash_map<std::string ,size_t > LoadCommandParams::m_counterMap;
     LoadCommandParams::LoadCommandParams(const std::vector<std::string> &params)
     {
         m_params.resize(2);
@@ -35,10 +37,10 @@ namespace CLI{
         else
         {
             m_params[1] = std::string(newParams[0].begin() ,newParams[0].begin() + positionIndex);
+            ++m_counterMap[m_params[1]];
             std::stringstream name;
-            name<<m_params[1]<<numDefault;
+            name<<m_params[1]<<m_counterMap[m_params[1]];
             m_params[1] = name.str();
-            ++numDefault;
         }
     //support path
     }

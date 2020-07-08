@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <hash_map>
 #include "../Params.h"
 
 namespace CLI {
@@ -14,7 +15,7 @@ namespace CLI {
         LoadCommandParams(const std::vector<std::string>& params);
 
     private:
-        static size_t numDefault;
+        static __gnu_cxx::hash_map<std::string ,size_t > m_counterMap;
 
     };
 }
