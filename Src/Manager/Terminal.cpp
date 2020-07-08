@@ -16,11 +16,11 @@ void Terminal::run(IReader *readFrom, IWriter *writeTo)
     {
         try
         {
-            writeTo->write("Your Command: ");
+            writeTo->write("> cmd >>> ");
             input = readFrom->read();
             std::vector<std::string> params = parsingCommand(input);
-            checkValidCommandStart(params);
-            output = commandsManager.getCommand(params[3])->run((CLI::Params*)commandParsingManager.getParams(params[3], std::vector<std::string>(params.begin() + 4, params.end())));
+            //checkValidCommandStart(params);
+            output = commandsManager.getCommand(params[0])->run(commandParsingManager.getParams(params[0], std::vector<std::string>(params.begin() + 1, params.end())));
             writeTo->write(output.c_str());
             input.clear();
         }
