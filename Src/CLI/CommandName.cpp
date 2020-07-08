@@ -5,7 +5,7 @@
 #include <stdexcept>
 #include "CommandName.h"
 namespace CLI{
-    std::string commandsName[CommandName::E_Last+1] = {"new","load","dup"};
+    std::string commandsName[CommandName::E_Last+1] = {"new","load","dup","save"};
 
     CommandName::ECommand CommandName::getECommand(const std::string &commandName)
     {

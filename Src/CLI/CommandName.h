@@ -14,6 +14,7 @@ public:
         E_NEW,
         E_LOAD,
         E_DUP,
+        E_SAVE,
         //....
                 E_Last
     };
