@@ -2,6 +2,7 @@
 #include "CommandName.h"
 #include "Commands/NewCommand.h"
 #include "Commands/LoadCommand.h"
+#include "Commands/DupCommand.h"
 
 namespace CLI{
 
@@ -13,6 +14,8 @@ namespace CLI{
                 return (ICommand*)(new NewCommand());
             case CommandName::E_LOAD:
                 return (ICommand*)(new LoadCommand());
+            case CommandName::E_DUP:
+                return (ICommand*)(new DupCommand());
                 /*....*/
             case CommandName::E_Last:
                 break;

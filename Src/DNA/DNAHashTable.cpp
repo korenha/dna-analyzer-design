@@ -1,4 +1,5 @@
 #include "DNAHashTable.h"
+#include "../Exception/MyException.h"
 
 void DNAHashTable::insert(const DNAMetaData &metaData)
 {
@@ -9,7 +10,7 @@ void DNAHashTable::insert(const DNAMetaData &metaData)
 }
 
 const DNAMetaData & DNAHashTable::find(const std::string &name)const {
-    return DNAData.find(getId(name))->second;
+    return (DNAData.find(getId(name)))->second;
 }
 
 
@@ -19,6 +20,10 @@ IDNAData&  DNAHashTable::getDNAData() {
 }
 
 const DNAMetaData &DNAHashTable::find(size_t _id) const {
+    if(DNAData.find(_id) == DNAData.end())
+    {
+        throw MyException("Error: Invalid_Id:: not fount that id");
+    }
     return DNAData.find(_id)->second;
 }
 

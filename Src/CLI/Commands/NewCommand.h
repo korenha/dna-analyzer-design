@@ -9,12 +9,12 @@
 
 namespace CLI{
 
-class NewCommand:public ICreationCommand
-{
-public:
-    std::string run(Params* params);
+    class NewCommand:public ICreationCommand
+    {
+    public:
+        std::string run(Params* params);
 
-};
+    };
 
 }
 #endif //DNAANALYZERPROJECT_NEWCOMMAND_H

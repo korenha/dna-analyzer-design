@@ -13,13 +13,6 @@ namespace CLI{
     class CommandsFactory
     {
     public:
-        enum ECommand{
-            E_NEW,
-            E_LOAD,
-            //....
-                    E_Last
-        };
-    public:
         static ICommand* getCommand(const std::string &command);
 
     private:

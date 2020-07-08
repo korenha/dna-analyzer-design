@@ -3,6 +3,8 @@
 
 #include "../Params.h"
 #include <string>
+#include <hash_map>
+
 namespace CLI{
     struct DupCommandParams :public Params
     {
@@ -10,7 +12,8 @@ namespace CLI{
         DupCommandParams(const std::vector<std::string>& params);
 
     private:
-        static size_t numDefault;
+        static __gnu_cxx::hash_map<size_t ,size_t > m_counterMap;
+
     };
 }
 

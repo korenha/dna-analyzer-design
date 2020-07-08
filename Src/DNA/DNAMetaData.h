@@ -6,7 +6,7 @@
 class DNAMetaData
 {
 public:
-    DNAMetaData(const IReader& reader, const std::string &name);
+    DNAMetaData(const DnaSequence &dna, const std::string &name);
    // const DNAMetaData& operator=(const DNAMetaData& otherDnaSeq){m_dnaSequence = otherDnaSeq.m_dnaSequence;}
     BaseDNA& operator[](size_t index)const{ return m_dnaSequence[index];}
     size_t getLength()const{ return m_dnaSequence.getLength();}

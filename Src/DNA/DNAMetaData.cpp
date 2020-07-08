@@ -4,8 +4,8 @@
 
 #include "DNAMetaData.h"
 
-DNAMetaData::DNAMetaData(const IReader& reader, const std::string &name)
-        : m_dnaSequence(reader), m_name(name)
+DNAMetaData::DNAMetaData(const DnaSequence &dna, const std::string &name)
+        : m_dnaSequence(dna), m_name(name)
 {}
 
 
