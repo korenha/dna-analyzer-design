@@ -9,6 +9,7 @@
 #include "CommandsParams/LoadCommandParams.h"
 #include "CommandsParams/DupCommandParams.h"
 #include "CommandsParams/management/SaveCommandParams.h"
+#include "CommandsParams/NoParams.h"
 
 namespace CLI{
 
@@ -16,6 +17,9 @@ namespace CLI{
     {
         switch (CommandName::getECommand(commandName))
         {
+            case CommandName::E_DO_NOTHING: {
+                return (Params *)(new NoParams());
+            }
             case CommandName::E_NEW: {
                 return (Params *)(new NewCommandParams(params));
             }

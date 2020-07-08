@@ -2,7 +2,7 @@
 #define DNAANALYZERPROJECT_PARAMS_H
 
 #include <vector>
-
+#include <string>
 namespace CLI
 {
     struct Params {

@@ -51,11 +51,19 @@ void Terminal::run(IReader *readFrom, IWriter *writeTo)
 static std::vector<std::string> parsingCommand(const std::string& input)
 {
     std::vector<std::string> parsedVector;
+
     size_t wordBegin = 0;
-    for (size_t wordEnd = 0; wordEnd < input.size(); ++wordEnd)
+    for (wordBegin = 0; wordBegin < input.size() && input[wordBegin] == ' '; ++wordBegin);
+    wordBegin = input.size();
+    if(wordBegin == input.size())
     {
-        for (wordBegin = wordEnd; wordBegin < input.size() && input[wordBegin] == ' '; ++wordBegin);
+        parsedVector.push_back("\n");
+        return parsedVector;
+    }
+    for (size_t wordEnd = wordBegin; wordEnd < input.size(); ++wordEnd)
+    {
         for (wordEnd = wordBegin; wordEnd < input.size() && input[wordEnd] != ' '; ++wordEnd);
+        for (wordBegin = wordEnd; wordBegin < input.size() && input[wordBegin] == ' '; ++wordBegin);
         parsedVector.push_back(std::string(input.begin()+wordBegin,input.begin() + wordEnd));
     }
     return parsedVector;

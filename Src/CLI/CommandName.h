@@ -11,12 +11,13 @@ class CommandName
 {
 public:
     enum ECommand{
+        E_DO_NOTHING,
         E_NEW,
         E_LOAD,
         E_DUP,
         E_SAVE,
         //....
-                E_Last
+        E_Last
     };
     static ECommand getECommand(const std::string& commandName);
 };

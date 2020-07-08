@@ -1,0 +1,15 @@
+//
+// Created by a on 7/8/20.
+//
+
+#ifndef DNAANALYZERPROJECT_ICONTROLCOMMAND_H
+#define DNAANALYZERPROJECT_ICONTROLCOMMAND_H
+
+
+class IControlCommand
+{
+
+};
+
+
+#endif //DNAANALYZERPROJECT_ICONTROLCOMMAND_H

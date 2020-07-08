@@ -4,6 +4,7 @@
 #include "Commands/LoadCommand.h"
 #include "Commands/DupCommand.h"
 #include "Commands/management/SaveCommand.h"
+#include "Commands/DoNothing.h"
 
 namespace CLI{
 
@@ -11,6 +12,8 @@ namespace CLI{
     {
         switch (CommandName::getECommand(command))
         {
+            case CommandName::E_DO_NOTHING:
+                return (ICommand*)(new DoNothing());
             case CommandName::E_NEW:
                 return (ICommand*)(new NewCommand());
             case CommandName::E_LOAD:
@@ -22,8 +25,6 @@ namespace CLI{
                 /*....*/
             case CommandName::E_Last:
                 break;
-            default:
-                return NULL;
         }
         return NULL;
     }
