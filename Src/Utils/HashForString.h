@@ -1,8 +1,14 @@
-//
-// Created by a on 7/8/20.
-//
+#ifndef DNAANALYZERPROJECT_HASHFORSTRING_H
+#define DNAANALYZERPROJECT_HASHFORSTRING_H
 
-#ifndef DNAANALYZERPROJECT_HASHFOR_STRING_H
-#define DNAANALYZERPROJECT_HASHFOR_STRING_H
-
-#endif //DNAANALYZERPROJECT_HASHFOR_STRING_H
+#include <string>
+#include <hash_map>
+namespace __gnu_cxx {
+    template <> struct hash<std::string> {
+        size_t operator()(std::string const & s) const {
+            hash<const char *> h;
+            return h(s.c_str());
+        }
+    };
+}
+#endif //DNAANALYZERPROJECT_HASHFORSTRING_H
