@@ -5,7 +5,7 @@
 #include "../ICreationCommand.h"
 #include <hash_map>
 namespace CLI{
-    struct DupCommand :public ICreationCommand
+    class DupCommand :public ICreationCommand
     {
     public:
         std::string run(Params* params);
