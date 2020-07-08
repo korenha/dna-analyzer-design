@@ -2,8 +2,8 @@
 #define DNAANALYZERPROJECT_IMANAGEMENTCOMMAND_H
 
 #include <string>
-#include "../../Params.h"
-#include "../../ICommand.h"
+#include "../../CommandsParams/Params.h"
+#include "../ICommand.h"
 
 namespace CLI{
     class IManagementCommand :public ICommand

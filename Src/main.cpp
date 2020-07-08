@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Test/TestDnaSeq.h"
-#include "Test/TestFileReader.h"
-#include "Test/TestFileWriter.h"
-#include "Manager/Manager.h"
+#include "Test/DNASequence/TestDnaSeq.h"
+#include "Test/fileReader/TestFileReader.h"
+#include "Test/fileWriter/TestFileWriter.h"
+#include "Manager/mainManager/Manager.h"
 
 
 int main()

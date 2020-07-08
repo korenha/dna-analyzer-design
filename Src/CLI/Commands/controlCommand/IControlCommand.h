@@ -5,7 +5,7 @@
 #ifndef DNAANALYZERPROJECT_ICONTROLCOMMAND_H
 #define DNAANALYZERPROJECT_ICONTROLCOMMAND_H
 
-#include "../../ICommand.h"
+#include "../ICommand.h"
 
 namespace CLI{
     class IControlCommand:public ICommand
