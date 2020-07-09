@@ -2,13 +2,17 @@
 #include <sstream>
 #include "NewCommandParams.h"
 #include "../../../../Exception/MyException.h"
-
+#include "../../../../Utils/HashForString.h"
 namespace CLI{
 
-    size_t NewCommandParams::numDefault = 1;
+    __gnu_cxx::hash_map<std::string ,size_t > NewCommandParams::m_counterMap;
     NewCommandParams::NewCommandParams(const std::vector<std::string>& parmas)
     {
         m_params.resize(2);
+        if(m_counterMap.empty())
+        {
+            ++m_counterMap["seq"];
+        }
         set(parmas);
     }
 
@@ -23,24 +27,27 @@ namespace CLI{
             throw std::invalid_argument("missing argument");
         }
         m_params[0] = newParams[1];
-        if(newParams.size() == 1)
+        m_params[1] = "seq";
+        std::string name = "seq";
+        if(newParams.size() == 3)
         {
-            if(newParams[2][0] != '@')
+            if (newParams[2][0] != '@')
             {
                 throw MyException("SyntaxError: Expected strt with @ in the second parameter");
             }
-            m_params[1] = newParams[2];
-            m_params[1].erase(0,1);
+            name = newParams[2];
+            name.erase(0,1);
+            m_params[1] = name;
         }
-        else
+
+        if(m_counterMap[name] != 0)
         {
-            std::stringstream name;
-            name<<"seq"<<numDefault;
-            m_params[1] = name.str();
-            ++numDefault;
-
+            std::stringstream ss;
+            ss << name<<m_counterMap[name];
+            m_params[1] = ss.str();
+            ++m_counterMap[name];
         }
-
+        ++m_counterMap[m_params[1]];
 
     }
 

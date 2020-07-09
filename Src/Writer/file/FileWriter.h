@@ -12,11 +12,13 @@
 class FileWriter: public IWriter
 {
 public:
-    FileWriter(const std::string &fileName);
+    FileWriter(const std::string &fileName,bool renew = true);
     void write(const char* data)const;
+    virtual void clear()const;
 
 private:
     std::string m_fileName;
+    bool m_renew;
     friend class TestFileWriter;
 };
 

@@ -4,7 +4,7 @@
 
 void Manager::doAction()
 {
-    std::cout<<"\n|--------Start Program-------------|\n"<<std::endl;
+    m_writer->write("\n|--------Start Program-------------|\n\n");
     Terminal::run(m_reader,m_writer);
-    std::cout<<"\n\n|--------End Program-------------|"<<std::endl;
+    m_writer->write("\n\n|--------End Program-------------|\n");
 }

@@ -16,9 +16,12 @@ std::string FileReader::read()const
     if(!file.is_open())
         throw MyException("Faild_OpenFile");
 
-    file.seekg(0,std::ios_base::beg);
+    static size_t position = 0;
+    file.seekg(position,std::ios_base::beg);
     std::string text;
-    file >> text;
+    std::getline(file,text);
+    position = file.tellg();
+    //file >> text;
     //std::getline(file, text);
     file.close();
     return text;

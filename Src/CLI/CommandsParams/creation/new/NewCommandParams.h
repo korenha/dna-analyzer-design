@@ -2,6 +2,7 @@
 #define DNAANALYZERPROJECT_NEWCOMMANDPARAMS_H
 
 #include <string>
+#include <hash_map>
 #include "../../Params.h"
 #include "../../../../Reader/string/StringReader.h"
 
@@ -15,7 +16,7 @@ namespace CLI {
         NewCommandParams(const std::vector<std::string>& parmas);
 
     private:
-        static size_t numDefault;
+        static __gnu_cxx::hash_map<std::string ,size_t > m_counterMap;
 
 
     };

@@ -6,6 +6,8 @@
 #define DNA_TESTFILEWRITER_H
 
 
+#include "../../Writer/file/FileWriter.h"
+
 class TestFileWriter
 {
 public:
@@ -13,6 +15,7 @@ public:
     static void testCtor();
     static void testWrite();
 };
+
 
 
 #endif //DNA_TESTFILEWRITER_H

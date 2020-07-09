@@ -6,6 +6,7 @@ class IWriter
 {
 public:
     virtual void write(const char* data)const=0;
+    virtual void clear()const=0;
     virtual ~IWriter(){}
 };
 

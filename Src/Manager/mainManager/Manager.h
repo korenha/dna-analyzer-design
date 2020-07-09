@@ -22,7 +22,7 @@ class Manager
 {
 public:
     void doAction();
-    Manager(IReader* reader = new ConsulReader(),IWriter* writer = new ConsulWriter()):m_reader(reader),m_writer(writer){}
+    Manager(IReader* reader = new ConsulReader(),IWriter* writer = new ConsulWriter()):m_reader(reader),m_writer(writer){writer->clear();}
     ~Manager(){delete m_reader;delete m_writer;}
 
 
