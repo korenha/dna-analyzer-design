@@ -19,29 +19,45 @@ namespace CLI{
         {
             throw std::invalid_argument("Error: too much arguments");
         }
-        if(newParams.size() == 1)
+        if(newParams.size() == 1 || newParams[1].empty())
         {
             throw std::invalid_argument("missing argument");
         }
-        size_t positionIndex = newParams[1].find_last_of('.');
+
         m_params[0] = newParams[1];
+
+        size_t positionIndex = newParams[1].find_last_of('.');
+        std::string name = newParams[1];
+        if(positionIndex != std::string::npos)
+        {
+            name = std::string(newParams[1].begin() ,newParams[1].begin() + positionIndex);
+        }
+
         if(newParams.size() == 3)
         {
             if(newParams[2][0] != '@')
             {
                 throw MyException("SyntaxError: Expected strt with @ in the second parameter");
             }
-            m_params[1] = newParams[2];
-            m_params[1].erase(m_params[1].begin());
+
+            name = newParams[2];
+            name.erase(name.begin());
         }
+
+        if(m_counterMap[name] == 0)
+        {
+            m_params[1] = name;
+        }
+
         else
         {
-            m_params[1] = std::string(newParams[1].begin() ,newParams[1].begin() + positionIndex);
-            ++m_counterMap[m_params[1]];
-            std::stringstream name;
-            name<<m_params[1]<<m_counterMap[m_params[1]];
-            m_params[1] = name.str();
+            std::stringstream name1;
+            name1<<name<<m_counterMap[name];
+            m_params[1] = name1.str();
+           ++m_counterMap[m_params[1]];
         }
+
+        ++m_counterMap[name];
     //support path
     }
 }

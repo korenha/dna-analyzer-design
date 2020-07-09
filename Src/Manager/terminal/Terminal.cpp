@@ -9,7 +9,7 @@
 static std::vector<std::string> parsingCommand(const std::string& input);
 //static void checkValidCommandStart(const std::vector<std::string> &params);/*> cmd >>>*/
 
-void Terminal::run(const IReader* readFrom,const IWriter* writeTo)
+void Terminal::run(const IReader *readFrom, const IWriter *writeTo, bool writeInput)
 {
     std::string input,output;
     CommandsManager commandsManager;
@@ -20,6 +20,10 @@ void Terminal::run(const IReader* readFrom,const IWriter* writeTo)
         {
             writeTo->write("> cmd >>> ");
             input = readFrom->read();
+            if(writeInput)
+            {
+                writeTo->write((input+"\n").c_str());
+            }
             std::vector<std::string> params = parsingCommand(input);
             //checkValidCommandStart(params);
             output = commandsManager.getCommand(params[0], readFrom, writeTo)->run(commandParsingManager.getParams(params[0],params));

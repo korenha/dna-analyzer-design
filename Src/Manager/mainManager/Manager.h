@@ -22,13 +22,14 @@ class Manager
 {
 public:
     void doAction();
-    Manager(IReader* reader = new ConsulReader(),IWriter* writer = new ConsulWriter()):m_reader(reader),m_writer(writer){writer->clear();}
+    Manager(IReader* reader = new ConsulReader(),IWriter* writer = new ConsulWriter(),bool writeInput = false):m_reader(reader),m_writer(writer),writeInput(writeInput){writer->clear();}
     ~Manager(){delete m_reader;delete m_writer;}
 
 
 private:
     IReader* m_reader;
     IWriter* m_writer;
+    bool writeInput;
 };
 
 

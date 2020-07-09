@@ -18,6 +18,7 @@ public:
 private:
     friend class TestFileReader;
     const char* m_fileName;
+    mutable size_t position;
 };
 
 

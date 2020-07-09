@@ -5,6 +5,6 @@
 void Manager::doAction()
 {
     m_writer->write("\n|--------Start Program-------------|\n\n");
-    Terminal::run(m_reader,m_writer);
+    Terminal::run(m_reader, m_writer, writeInput);
     m_writer->write("\n\n|--------End Program-------------|\n");
 }

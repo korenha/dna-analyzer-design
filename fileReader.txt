@@ -1,3 +1,15 @@
-new AAAAAAAAAAAAAa
+new AAAAAAAAAAAAA
+new GGGGGGGGGGGGG
+new AAAAGGGG @mySeq
+new AAAAAAAAAAAAAA @mySeq
+newe
+new AAj
+new AAAAAAAAAAAA @mySeq A
+new AAAAAAAAAAAA @mySeq 
 quit
+n
+quit
+N
+quit
+dss
 y

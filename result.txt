@@ -1,2 +1,24 @@
-Thank you for using Dnalanyzer. 
+
+|--------Start Program-------------|
+
+> cmd >>> [1] seq1: AAAAAAAAAAAAA
+> cmd >>> [2] seq2: GGGGGGGGGGGGG
+> cmd >>> [3] mySeq: AAAAGGGG
+> cmd >>> [4] mySeq1: AAAAAAAAAAAAAA
+> cmd >>> Not found the command newe
+> cmd >>> [5] seq3: 
+> cmd >>> Not consist of baseDna
+> cmd >>> too much arguments
+> cmd >>> [6] mySeq2: AAAAAAAAAAAA
+> cmd >>> ... Are you sure you want to quit?
+Please confirm by 'y' or 'Y', or cancel by 'n' or 'N'.
+> confirm >>> > cmd >>> ... Are you sure you want to quit?
+Please confirm by 'y' or 'Y', or cancel by 'n' or 'N'.
+> confirm >>> > cmd >>> ... Are you sure you want to quit?
+Please confirm by 'y' or 'Y', or cancel by 'n' or 'N'.
+> confirm >>> 
+You have typed an invalid response. Please either confirm by 'y'/'Y', or cancel by 'n'/'N'.
+> confirm >>> Thank you for using Dnalanyzer. 
 Goodbye!
+
+|--------End Program-------------|

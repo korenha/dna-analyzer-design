@@ -13,7 +13,10 @@ namespace CLI
 
     std::string LoadCommand::run(Params *params)
     {
-        IDNAData::getDNAData().insert(DNAMetaData(DnaSequence(FileReader(params->get()[0].c_str())),params->get()[1]));
+        FileReader file(params->get()[0].c_str());
+        std::string seq = file.read();
+        DNAMetaData newDna(DnaSequence(seq),params->get()[1]);
+        IDNAData::getDNAData().insert(newDna);
         std::stringstream out;
         DNAMetaData temp  = (IDNAData::getDNAData()).find(params->get()[1]);
         out << '['<<IDNAData::getDNAData().getId(params->get()[1])<<"] ";

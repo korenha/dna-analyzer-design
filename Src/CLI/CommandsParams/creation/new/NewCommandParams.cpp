@@ -22,7 +22,7 @@ namespace CLI{
         {
             throw std::invalid_argument("too much arguments");
         }
-        if(newParams.size() == 1)
+        if(newParams.size() == 1 || newParams[1].empty())
         {
             throw std::invalid_argument("missing argument");
         }
