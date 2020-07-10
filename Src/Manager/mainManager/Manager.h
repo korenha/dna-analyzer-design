@@ -7,7 +7,7 @@
 #include "../../Reader/keyBoard/ConsulReader.h"
 #include "../../Writer/keyBoard/ConsulWriter.h"
 
-class MenagerWriterReader{
+/*class MenagerWriterReader{
 public:
     MenagerWriterReader(IReader* reader,IWriter* writer):m_reader(reader),m_writer(writer){}
     IReader* const getReader(){ return m_reader;}
@@ -16,19 +16,20 @@ public:
 private:
     IReader* m_reader;
     IWriter* m_writer;
-};
+};*/
 
 class Manager
 {
 public:
     void doAction();
-    Manager(IReader* reader = new ConsulReader(),IWriter* writer = new ConsulWriter(),bool writeInput = false):m_reader(reader),m_writer(writer),writeInput(writeInput){writer->clear();}
-    ~Manager(){delete m_reader;delete m_writer;}
+    Manager(const IReader *const reader, const IWriter *const writer, bool writeInput = false): m_reader(reader), m_writer(writer), writeInput(writeInput){writer->clear();}
+    ~Manager(){}
+
 
 
 private:
-    IReader* m_reader;
-    IWriter* m_writer;
+    const IReader* const m_reader;
+    const IWriter* const m_writer;
     bool writeInput;
 };
 

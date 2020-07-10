@@ -19,7 +19,8 @@ namespace CLI
         {
             throw std::invalid_argument("Error: invalid_argument:: too much arguments");
         }
-        if(newParams.empty())
+
+        if(newParams.size() == 1)
         {
             throw std::invalid_argument("Error: invalid_argument:: missing argument");
         }

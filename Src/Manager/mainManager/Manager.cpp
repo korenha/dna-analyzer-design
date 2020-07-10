@@ -8,3 +8,5 @@ void Manager::doAction()
     Terminal::run(m_reader, m_writer, writeInput);
     m_writer->write("\n\n|--------End Program-------------|\n");
 }
+
+

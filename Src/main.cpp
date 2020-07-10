@@ -11,7 +11,9 @@ int main()
    // TestDnaSeq::test();
    // TestFileReader::testAll();
     //TestFileWriter::testAll();
-    Manager manager(new FileReader("fileReader.txt"),new FileWriter("result.txt", false), true);
+    FileReader readFrom("fileReader.txt");
+    FileWriter writTo("result.txt", false);
+    Manager manager(&readFrom,&writTo, true);
     manager.doAction();
     return 0;
 }

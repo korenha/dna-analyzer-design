@@ -12,7 +12,7 @@
 class Terminal
 {
 public:
-    static void run(const IReader *readFrom, const IWriter *writeTo, bool writeInput = false);
+    static void run(const IReader *const readFrom, const IWriter *const writeTo, bool writeInput = false);
 };
 
 

@@ -9,7 +9,7 @@
 static std::vector<std::string> parsingCommand(const std::string& input);
 //static void checkValidCommandStart(const std::vector<std::string> &params);/*> cmd >>>*/
 
-void Terminal::run(const IReader *readFrom, const IWriter *writeTo, bool writeInput)
+void Terminal::run(const IReader *const readFrom, const IWriter *const writeTo, bool writeInput)
 {
     std::string input,output;
     CommandsManager commandsManager;
@@ -25,7 +25,6 @@ void Terminal::run(const IReader *readFrom, const IWriter *writeTo, bool writeIn
                 writeTo->write((input+"\n").c_str());
             }
             std::vector<std::string> params = parsingCommand(input);
-            //checkValidCommandStart(params);
             output = commandsManager.getCommand(params[0], readFrom, writeTo)->run(commandParsingManager.getParams(params[0],params));
             writeTo->write(output.c_str());
             input.clear();
@@ -71,7 +70,7 @@ static std::vector<std::string> parsingCommand(const std::string& input)
         parsedVector.push_back("\n");
         return parsedVector;
     }
-    for (size_t wordEnd = wordBegin; wordEnd < input.size(); ++wordEnd)
+    for (size_t wordEnd = wordBegin; wordBegin < input.size(); ++wordEnd)
     {
         for (wordEnd = wordBegin; wordEnd < input.size() && input[wordEnd] != ' '; ++wordEnd);
         parsedVector.push_back(std::string(input.begin()+wordBegin,input.begin() + wordEnd));
