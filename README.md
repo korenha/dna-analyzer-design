@@ -1,1 +1,1 @@
-# dna-analyzer-design-korenha
+# dna-analyzer-design
